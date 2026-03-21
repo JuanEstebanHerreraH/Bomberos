@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Clientes | Bomberos Bogotá D.C.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Pegajoso -->
+    <header id="header" class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Test.png" alt="Logo Bomberos Bogotá">
+                <span>Bomberos Bogotá D.C.</span>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Volver al Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="clientes.html" class="active">Nuestros Clientes</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section bg-alt" style="padding-top: 150px; min-height: 80vh;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Todos Nuestros Clientes y Casos de Éxito</h2>
+                <div class="accent-line"></div>
+                <p>El sector público y privado de Colombia confía en nosotros para proteger sus organizaciones.</p>
+            </div>
+            
+            <!-- Contenedor de Todos los Clientes (Llenado por JS) -->
+            <div class="clients-grid" id="all-clients-container">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cuerpo Oficial de Bomberos de Bogotá. Modernización y Eficiencia Operativa.</p>
+        </div>
+    </footer>
+
+    <!-- Elementos flotantes -->
+    <div class="floating-actions">
+        <a href="https://wa.me/573000000000" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

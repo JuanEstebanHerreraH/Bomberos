@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | Bomberos Bogotá D.C.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Pegajoso -->
+    <header id="header" class="scrolled"> <!-- Siempre Scrolled en subpáginas para evitar transparencia sobre el contenido -->
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Test.png" alt="Logo Bomberos Bogotá">
+                <span>Bomberos Bogotá D.C.</span>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Volver al Inicio</a></li>
+                    <li><a href="catalogo.html" class="active">Catálogo Completo</a></li>
+                    <li><a href="clientes.html">Nuestros Clientes</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Encabezado de la página -->
+    <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Catálogo Completo de Equipamiento</h2>
+                <div class="accent-line"></div>
+                <p>Navega a través de nuestras categorías de productos contra incendio y herramientas de rescate.</p>
+            </div>
+            
+            <!-- Barra de Búsqueda Mejorada -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="catalogSearchInput" placeholder="Busca por nombre, categoría o especificación técnica...">
+            </div>
+
+            <!-- Filtros por Categoría Dinámicos -->
+            <div class="category-filters" id="categoryFiltersContainer">
+                <!-- Se llenan vía JS, por defecto un botón de Todos -->
+                <button class="cat-btn active" data-category="Todos">Todas las Categorías</button>
+            </div>
+
+            <!-- Contenedor Principal del Catálogo -->
+            <div class="products-grid" id="catalog-products-container">
+                <!-- Se llenará vía JS -->
+            </div>
+            
+            <div id="catalog-no-products" style="display:none; text-align:center; padding: 40px; color: var(--text-light); background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                <h3>No se encontraron productos</h3>
+                <p>Intenta cambiar los términos de búsqueda o selecciona otra categoría.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cuerpo Oficial de Bomberos de Bogotá. Modernización y Eficiencia Operativa.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp & Volver al tope -->
+    <div class="floating-actions">
+        <a href="https://wa.me/573000000000" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

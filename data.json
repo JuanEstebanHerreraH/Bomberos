@@ -1,0 +1,134 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Extintor ABC 10 Libras",
+      "descripcion": "Extintor multipropósito de polvo químico seco, ideal para clase A, B y C.",
+      "precio": 85000,
+      "imagen_url": "Test.png",
+      "categoria": "Extintores",
+      "peso": "10 Libras (Aprox 4.5 Kg)",
+      "composicion": "Polvo Químico Seco (Fosfato Monoamónico)"
+    },
+    {
+      "id": 2,
+      "nombre": "Extintor CO2 5 Libras",
+      "descripcion": "Especial para fuego eléctrico, no deja residuos. Material de aluminio libre de costuras.",
+      "precio": 165000,
+      "imagen_url": "Test.png",
+      "categoria": "Extintores",
+      "peso": "5 Libras (Aprox 2.2 Kg)",
+      "composicion": "Dióxido de Carbono (CO2) de alta presión"
+    },
+    {
+      "id": 3,
+      "nombre": "Manguera Contra Incendio 1.5\"",
+      "descripcion": "Rollo de 30 metros de manguera en lona sintética 100% poliéster con uniones de bronce.",
+      "precio": 290000,
+      "imagen_url": "Test.png",
+      "categoria": "Equipos de Agua",
+      "peso": "15 Kg el rollo completo",
+      "composicion": "Lona sintética 100% poliéster, recubrimiento interno de caucho"
+    },
+    {
+      "id": 4,
+      "nombre": "Gabinete Contra Incendio Tipo I",
+      "descripcion": "Gabinete con puerta de vidrio, incluye soporte, boquilla, manguera y llave.",
+      "precio": 650000,
+      "imagen_url": "Test.png",
+      "categoria": "Equipos de Agua",
+      "peso": "25 Kg (Gabinete vacío)",
+      "composicion": "Lámina Cold Rolled calibre 20, pintura electrostática roja"
+    },
+    {
+      "id": 5,
+      "nombre": "Traje de Bombero Profesional",
+      "descripcion": "Equipo de protección personal normado NFPA 1971, incluye chaqueta y pantalón.",
+      "precio": 4200000,
+      "imagen_url": "Test.png",
+      "categoria": "Protección Personal",
+      "peso": "6 Kg en total",
+      "composicion": "Kevlar® / Nomex®, barrera térmica de humedad avanzada"
+    },
+    {
+      "id": 6,
+      "nombre": "Detector de Humo Autónomo",
+      "descripcion": "Sensor fotoeléctrico inteligente con alarma sonora para espacios comerciales y hogares.",
+      "precio": 45000,
+      "imagen_url": "Test.png",
+      "categoria": "Alarmas y Sensores",
+      "peso": "200 gramos",
+      "composicion": "Plástico ABS retardante al fuego, circuito electrónico"
+    },
+    {
+      "id": 7,
+      "nombre": "Estación Manual de Alarma",
+      "descripcion": "Palanca de acción simple para activar sistema de emergencia perimetral.",
+      "precio": 120000,
+      "imagen_url": "Test.png",
+      "categoria": "Alarmas y Sensores",
+      "peso": "350 gramos",
+      "composicion": "Aleación metálica o Policarbonato de alto impacto"
+    },
+    {
+      "id": 8,
+      "nombre": "Casco de Rescate Estructural",
+      "descripcion": "Casco de termoplástico resistente a altas temperaturas con visor de policarbonato.",
+      "precio": 850000,
+      "imagen_url": "Test.png",
+      "categoria": "Protección Personal",
+      "peso": "1.5 Kg",
+      "composicion": "Termoplástico ULTEM resistente a llamas, visor y protector de cuello ignífugo"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Conjunto Residencial Los Caobos",
+      "descripcion": "Complejo habitacional de 500 apartamentos en Suba.",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Instalación de gabinetes y capacitación a brigadistas.",
+      "ubicacion": "Localidad de Suba, Av. Boyacá #170"
+    },
+    {
+      "id": 2,
+      "nombre": "Centro Comercial Gran Estación",
+      "descripcion": "Uno de los centros comerciales más grandes y concurridos de Bogotá.",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Renovación total del sistema de rociadores y extintores.",
+      "ubicacion": "Av. Calle 26 #62-47, Bogotá"
+    },
+    {
+      "id": 3,
+      "nombre": "Universidad Nacional de Colombia",
+      "descripcion": "Institución de educación superior pública (Ciudad Universitaria).",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Planes de emergencia de laboratorios de química y simulacros.",
+      "ubicacion": "Cra 45 #26-85, Ciudad Universitaria"
+    },
+    {
+      "id": 4,
+      "nombre": "Clínica Colombia",
+      "descripcion": "Centro de salud de alta complejidad de Sanitas.",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Dotación de equipos extintores CO2 y señalización fotoluminiscente.",
+      "ubicacion": "Calle 23 #66-46, Bogotá"
+    },
+    {
+      "id": 5,
+      "nombre": "Torre Colpatria",
+      "descripcion": "Rascacielos icónico en el centro internacional de Bogotá.",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Auditoría de rutas de evacuación y sistema de bombas contraincendios.",
+      "ubicacion": "Cra. 7 #24-89, Centro Internacional"
+    },
+    {
+      "id": 6,
+      "nombre": "Aeropuerto El Dorado",
+      "descripcion": "Principal terminal aéreo del país.",
+      "logo_url": "Test.png",
+      "trabajo_realizado": "Suministro de trajes de aproximación al fuego nivel 3.",
+      "ubicacion": "Av. El Dorado #103-9, Fontibón"
+    }
+  ]
+}

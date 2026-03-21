@@ -64,6 +64,15 @@ main {
     text-align: center;
 }
 
+.company-brand {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: var(--primary-red) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+}
+
 /* Top Bar Bomberos */
 .top-bar {
     background: var(--dark-bg);

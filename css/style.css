@@ -147,6 +147,15 @@ header.scrolled .header-container {
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
 
+.company-brand {
+    font-size: 1.1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--primary-red);
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+}
+
 nav .nav-links {
     display: flex;
     gap: 30px;

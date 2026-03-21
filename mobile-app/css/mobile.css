@@ -64,13 +64,29 @@ main {
     text-align: center;
 }
 
+@keyframes brandGradientMobile {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .company-brand {
-    font-size: 1.1em;
-    font-weight: 800;
-    color: var(--primary-red) !important;
+    font-size: 1.25rem;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+    background: linear-gradient(270deg, #E11D48, #FFA3A3, #9F0B28, #E11D48);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brandGradientMobile 5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8)) drop-shadow(0 0 6px rgba(225, 29, 72, 0.4));
+    transition: filter 0.3s ease;
+    display: inline-block;
+}
+
+.company-brand:active, .company-brand:hover {
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(255, 107, 107, 1));
 }
 
 /* Top Bar Bomberos */

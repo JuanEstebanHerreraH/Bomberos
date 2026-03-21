@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos | Bomberos Bogotá D.C.</title>
+    <title>Cursos Especializados | Bomberos Bogotá D.C.</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,14 @@
 <body>
 
     <!-- Header Pegajoso -->
-    <header id="header" class="scrolled"> <!-- Siempre Scrolled en subpáginas para evitar transparencia sobre el contenido -->
+    <header id="header" class="scrolled">
         <div class="container header-container">
             <div class="logo">
                 <img src="assets/Test.png" alt="Logo Bomberos Bogotá">
                 <span>Bomberos Bogotá D.C.</span>
             </div>
             <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; color:var(--text-main); font-size:1.5rem; cursor:pointer;" onclick="document.body.classList.toggle('light-mode');"><i class="fas fa-moon"></i></button>
+                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
                 <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
                 <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
                 <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
@@ -36,41 +36,56 @@
     <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
         <div class="container">
             <div class="section-header">
-                <h2>Catálogo Completo de Equipamiento</h2>
+                <h2>Cursos de Formación Bomberil</h2>
                 <div class="accent-line"></div>
-                <p>Navega a través de nuestras categorías de productos contra incendio y herramientas de rescate.</p>
-            </div>
-            
-            <!-- Barra de Búsqueda Mejorada -->
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="catalogSearchInput" placeholder="Busca por nombre, categoría o especificación técnica...">
+                <p>Capacitación avalada y regida bajo los estándares normativos de Colombia para brigadas industriales y personal de emergencias.</p>
             </div>
 
-            <!-- Filtros por Categoría Mejorados -->
-            <button id="openFilterBtn" class="btn btn-secondary" style="margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fas fa-filter"></i> Filtros de Modelos y Categorías</button>
-            <div id="filterSidebar" class="filter-sidebar">
-                <div class="filter-header">
-                    <h3><i class="fas fa-filter"></i> Filtros Disponibles</h3>
-                    <i class="fas fa-times close-filter" id="closeFilterBtn"></i>
-                </div>
-                <div class="filter-section">
-                    <h4>Categorías</h4>
-                    <div class="category-filters" id="categoryFiltersContainer" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex-wrap: nowrap; overflow-x: hidden;">
-                        <button class="cat-btn active" data-category="Todos" style="width: 100%; text-align: left;">Todas las Categorías</button>
+            <div class="services-grid">
+                <!-- Curso 1 -->
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Curso 1" style="width: 100%; height: 230px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <span class="badge" style="margin-bottom: 15px;">Nivel Básico e Intermedio</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Control de Incendios Forestales</h3>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Técnicas especializadas para contrarrestar conflagraciones en áreas de reserva natural y vegetación. Avalado por el Sistema Nacional de Bomberos.</p>
+                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
+                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 40 Horas</span>
+                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Presencial</span>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
-            </div>
 
-            <!-- Contenedor Principal del Catálogo -->
-            <div class="products-grid" id="catalog-products-container">
-                <!-- Se llenará vía JS -->
-            </div>
-            
-            <div id="catalog-no-products" style="display:none; text-align:center; padding: 40px; color: var(--text-light); background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
-                <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
-                <h3>No se encontraron productos</h3>
-                <p>Intenta cambiar los términos de búsqueda o selecciona otra categoría.</p>
+                <!-- Curso 2 -->
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Curso 2" style="width: 100%; height: 230px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <span class="badge" style="margin-bottom: 15px;">Nivel Avanzado</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Primeros Auxilios Avanzados y RCP</h3>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Curso intensivo sobre soporte vital básico, uso del DEA y estabilización de pacientes críticos bajo lineamientos del MINSALUD Colombia.</p>
+                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
+                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 20 Horas</span>
+                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Híbrido</span>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Curso 3" style="width: 100%; height: 230px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <span class="badge" style="margin-bottom: 15px;">Especialidad Táctica</span>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Rescate en Espacios Confinados</h3>
+                        <p style="color: var(--text-light); margin-bottom: 20px;">Prepárate para operar en atmósferas peligrosas y espacios reducidos cumpliendo estrictamente con la Normativa legal vigente de trabajo de alto riesgo en Colombia.</p>
+                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
+                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 60 Horas</span>
+                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Presencial/Práctico</span>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -88,16 +103,6 @@
             <p>&copy; 2026 Cuerpo Oficial de Bomberos de Bogotá. Modernización y Eficiencia Operativa.</p>
         </div>
     </footer>
-
-    <!-- WhatsApp & Volver al tope -->
-    <div class="floating-actions">
-        <a href="https://wa.me/573000000000" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </div>
 
     <!-- Sidebar Global -->
     <div id="globalSidebar" class="sidebar">

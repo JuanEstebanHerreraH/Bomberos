@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos | Bomberos Bogotá D.C.</title>
+    <title>Cotización | Bomberos Bogotá D.C.</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +21,14 @@
                 <img src="assets/Test.png" alt="Logo Bomberos Bogotá">
                 <span>Bomberos Bogotá D.C.</span>
             </div>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; color:var(--text-main); font-size:1.5rem; cursor:pointer;" onclick="document.body.classList.toggle('light-mode');"><i class="fas fa-moon"></i></button>
-                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
-                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
-                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
+            <nav style="display: flex; align-items: center;">
+                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; margin-right: 20px; outline:none;"><i class="fas fa-moon"></i></button>
+                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px; margin-right: 20px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
+                <a href="#" id="openCartBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem; position: relative; margin-right: 20px;">
+                    Ver Carrito <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCountBadge" class="cart-badge" style="display:none;">0</span>
+                </a>
+                <div class="sidebar-toggle" id="sidebar-toggle" style="display: inline-block; font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
                     <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
                 </div>
             </nav>
@@ -36,9 +39,9 @@
     <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
         <div class="container">
             <div class="section-header">
-                <h2>Catálogo Completo de Equipamiento</h2>
+                <h2>Cotización en Línea</h2>
                 <div class="accent-line"></div>
-                <p>Navega a través de nuestras categorías de productos contra incendio y herramientas de rescate.</p>
+                <p>Arma tu cotización de equipos contra incendio y protección personal. Mostrando precios de catálogo.</p>
             </div>
             
             <!-- Barra de Búsqueda Mejorada -->
@@ -62,8 +65,8 @@
                 </div>
             </div>
 
-            <!-- Contenedor Principal del Catálogo -->
-            <div class="products-grid" id="catalog-products-container">
+            <!-- Contenedor Principal de la Cotización -->
+            <div class="products-grid" id="cotizacion-products-container">
                 <!-- Se llenará vía JS -->
             </div>
             
@@ -114,6 +117,81 @@
         </ul>
     </div>
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Shopping Cart Flotante -->
+    <div id="shoppingCartSidebar" class="shopping-cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mi Cotización</h3>
+            <span class="close-cart" id="closeCartBtn">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Items del carrito -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cartTotalPrice">$0 COP</span></div>
+            <button class="btn btn-primary" id="btnComprar" style="width: 100%; margin-top: 15px;">Comprar Ahora</button>
+        </div>
+    </div>
+    
+    <!-- Modal Checkout -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-btn" id="closeCheckoutBtn">&times;</span>
+            <div class="modal-body">
+                <h2 style="margin-bottom: 20px;">Completar Compra</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="chkNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" id="chkEmail" required placeholder="tu-correo@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección de Envío</label>
+                        <input type="text" id="chkDireccion" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Pagar <span id="btnPagarTotal"></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pago Exitoso -->
+    <div id="successModal" class="modal">
+        <div class="modal-content" style="max-width: 500px; text-align: center;">
+            <span class="close-btn" id="closeSuccessBtn">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-check-circle" style="font-size: 5rem; color: #4ADE80; margin-bottom: 20px;"></i>
+                <h2 style="color: #4ADE80; margin-bottom: 10px;">¡Pago Exitoso!</h2>
+                <p>Su factura ha sido enviada a: <strong id="successEmailText" style="color:#FFF;"></strong></p>
+                <div style="margin-top: 15px; margin-bottom: 30px;">
+                    <button class="btn btn-secondary" id="btnEditEmail" style="padding: 10px 20px; font-size: 0.9rem;">Editar Correo y Reenviar Factura <i class="fas fa-edit"></i></button>
+                </div>
+                
+                <h3 style="margin-bottom: 15px;">Contáctanos directamente:</h3>
+                <div style="display: flex; justify-content: center; gap: 20px; font-size: 1.1rem;">
+                    <a href="https://wa.me/573000000000" class="btn btn-secondary" style="border-color: #25D366; color: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:contacto@bomberosbogota.gov.co" class="btn btn-secondary" style="border-color: #EA4335; color: #EA4335;"><i class="fas fa-envelope"></i> Gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Correo -->
+    <div id="editEmailModal" class="modal" style="z-index: 3000;">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close-btn" id="closeEditEmailBtn">&times;</span>
+            <div class="modal-body">
+                <h2 style="margin-bottom: 15px;">Actualizar Correo</h2>
+                <div class="form-group" style="text-align: left;">
+                    <input type="email" id="newEmailInput" required>
+                </div>
+                <button class="btn btn-primary" id="btnUpdateEmail" style="width: 100%;">Actualizar y Reenviar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

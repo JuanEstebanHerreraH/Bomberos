@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bomberos Mobile | Compras</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Mobile specific CSS -->
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+
+    <!-- Splash Screen / Bloqueo -->
+    <div id="splashScreen" class="splash-screen">
+        <i class="fas fa-fire-extinguisher splash-logo"></i>
+        <h1>Bomberos Mobile</h1>
+        <p>Sistema Operativo y Logístico D.C.</p>
+        <button class="btn-primary-mobile splash-btn" onclick="app.closeSplash()">Ingresar y Continuar <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></button>
+    </div>
+
+    <!-- Top Bar tipo Institucional -->
+    <header class="top-bar">
+        <div class="logo-area" onclick="app.toggleSidebarFilters()" style="cursor: pointer; padding-right: 5px;">
+            <i class="fas fa-bars" style="font-size: 1.5rem; color: #fff;"></i>
+        </div>
+        <div class="brand-title" style="flex: 1; text-align: center; font-weight: 700; color: #fff; font-size: 1.2rem;">
+            Catálogo
+        </div>
+        <div class="cart-icon-top" onclick="app.switchView('cart')">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="topCartBadge" class="badge" style="display:none;">0</span>
+        </div>
+    </header>
+
+    <!-- App Content Wrapper -->
+    <main id="app-container">
+        <!-- VISTA: HOME (Productos) -->
+        <section id="view-home" class="view active">
+            <!-- Sidebar / Pantalla de Filtros (Lateral u originando desde menu) -->
+            <div id="mobileFilterOverlay" style="display:none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 200;" onclick="app.toggleSidebarFilters()"></div>
+            <div id="mobileFilterPanel" style="position: fixed; top: 0; left: -300px; width: 280px; height: 100vh; background: #fff; z-index: 201; transition: left 0.3s; padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    <h3 style="font-size: 1.2rem; color: var(--dark-bg);"><i class="fas fa-filter"></i> Categorías</h3>
+                    <i class="fas fa-times" style="font-size: 1.5rem; color: var(--primary-red); cursor: pointer;" onclick="app.toggleSidebarFilters()"></i>
+                </div>
+                <div id="sidebarCategoryScroll" style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Llenado via JS -->
+                </div>
+            </div>
+
+            <!-- Block buscador independiente -->
+            <div class="app-search-block">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Busca en el catálogo...">
+            </div>
+
+            <div class="banner-slider">
+                <img src="../assets/Test.png" alt="Ofertas" class="banner-img">
+            </div>
+
+            <div class="products-list" id="productsList">
+                <!-- Tarjetas de producto por JS -->
+            </div>
+            <div style="height: 80px;"></div> <!-- Spacing for bottom nav -->
+        </section>
+
+        <!-- VISTA: CARRITO -->
+        <section id="view-cart" class="view">
+            <div class="view-header">
+                <h2>Mi Carrito</h2>
+            </div>
+            <div id="cartItemsContainer" class="cart-items-container">
+                <!-- Por JS -->
+            </div>
+            <div class="cart-summary" id="cartSummaryBlock" style="display:none;">
+                <div class="summary-line total">
+                    <span>Total</span>
+                    <span id="cartTotalText">$0</span>
+                </div>
+                <button class="btn-primary-mobile" onclick="app.showCheckout()">Continuar Compra</button>
+            </div>
+            <div id="emptyCartMessage" class="empty-message">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Tu carrito está vacío.</p>
+                <button class="btn-secondary-mobile" onclick="app.switchView('home')">Descubrir Productos</button>
+            </div>
+            <div style="height: 80px;"></div>
+        </section>
+
+        <!-- VISTA: CLIENTES -->
+        <section id="view-clients" class="view">
+            <div class="view-header">
+                <h2>Directorio de Clientes</h2>
+            </div>
+            <div class="clients-list" id="clientsList">
+                <!-- Por JS -->
+            </div>
+            <div style="height: 80px;"></div>
+        </section>
+        
+        <!-- VISTA: CHECKOUT (Pago) -->
+        <section id="view-checkout" class="view">
+            <div class="view-header" style="background:#fff;">
+                <h2><i class="fas fa-arrow-left" onclick="app.switchView('cart')" style="margin-right:15px;"></i> Finalizar Compra</h2>
+            </div>
+            <form id="mobileCheckoutForm" class="checkout-form">
+                <div class="form-group">
+                    <label>Nombre y Apellido</label>
+                    <input type="text" id="chkNombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="chkEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Dirección de Envío</label>
+                    <input type="text" id="chkDir" required>
+                </div>
+                <div class="form-group">
+                    <label>Método de Pago</label>
+                    <select required>
+                        <option>Tarjeta de Crédito / Débito</option>
+                        <option>PSE (MercadoPago)</option>
+                        <option>Efecty</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary-mobile" style="margin-top: 20px;">Pagar <span id="checkoutTotalText"></span></button>
+            </form>
+            <div style="height: 80px;"></div>
+        </section>
+
+        <!-- VISTA: PAGO EXITOSO -->
+        <section id="view-success" class="view" style="background: #fff; text-align: center; height: 100vh;">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 0 20px;">
+                <i class="fas fa-check-circle" style="font-size: 5rem; color: #00a650; margin-bottom: 20px;"></i>
+                <h2 style="color: #333; margin-bottom: 15px;">¡Listo! Tu pago fue aprobado.</h2>
+                <p style="color: #666; margin-bottom: 5px;">Enviamos el comprobante a tu correo y el equipo preparará tu envío pronto.</p>
+                <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 10px; display: inline-block;">
+                    <p style="font-size: 0.95rem; color: #333; margin: 0;">Enviado a: <strong id="successEmailDisplay">...</strong> 
+                        <i class="fas fa-edit" style="color: var(--primary-red); cursor: pointer; margin-left: 8px;" onclick="app.editSuccessEmail()"></i>
+                    </p>
+                </div>
+                <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                    <button class="btn-primary-mobile" onclick="app.switchView('home')">Volver al Inicio</button>
+                    <a href="https://wa.me/573000000000" target="_blank" class="btn-secondary-mobile" style="color: #00a650; border-color: #00a650;"><i class="fab fa-whatsapp"></i> Hablar con Soporte</a>
+                </div>
+            </div>
+        </section>
+        <!-- VISTA: CONTACTOS -->
+        <section id="view-contact" class="view">
+            <div class="view-header">
+                <h2>Contacto Institucional</h2>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fas fa-headset"></i> Atención Inmediata</h3>
+                <p>¿Necesitas una cotización detallada o tienes dudas sobre nuestros servicios de capacitación?</p>
+                <a href="mailto:cotizaciones@bomberos-bogota.com.co" class="btn-secondary-mobile" style="margin-top: 20px; display: block; text-decoration: none;"><i class="fas fa-envelope" style="margin-right:8px;"></i> Escribir Correo</a>
+                <a href="https://wa.me/573000000000" class="btn-primary-mobile" style="margin-top: 15px; background: #00a650; display: block; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 166, 80, 0.4);"><i class="fab fa-whatsapp" style="margin-right:8px;"></i> WhatsApp</a>
+            </div>
+            <div class="social-card">
+                <h3>Nuestras Redes Sociales</h3>
+                <div class="social-icons-mobile">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div style="height: 80px;"></div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" id="bottomNav">
+        <div class="nav-item active" onclick="app.switchView('home')">
+            <i class="fas fa-compass"></i>
+            <span>Catálogo</span>
+        </div>
+        <div class="nav-item" onclick="app.switchView('cart')">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Carrito</span>
+            <span id="bottomCartBadge" class="nav-badge" style="display:none;">0</span>
+        </div>
+        <div class="nav-item" onclick="app.switchView('clients')">
+            <i class="fas fa-briefcase"></i>
+            <span>Directorio</span>
+        </div>
+        <div class="nav-item" onclick="app.switchView('contact')">
+            <i class="fas fa-id-badge"></i>
+            <span>Soporte</span>
+        </div>
+    </nav>
+
+    <!-- Overlay de Carga -->
+    <div id="loaderOverlay" class="loader-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Script de lógica -->
+    <script src="js/app.js"></script>
+</body>
+</html>

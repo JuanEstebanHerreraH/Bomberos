@@ -13,7 +13,7 @@
         rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -22,26 +22,22 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="Test.png" alt="Logo Bomberos Bogotá">
+                <img src="assets/Test.png" alt="Logo Bomberos Bogotá">
                 <span>LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
             </div>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos-destacados">Productos Recomendados</a></li>
-                    <li><a href="#clientes-destacados">Clientes</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
+            <nav style="display: flex; align-items: center; gap: 20px;">
+                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
+                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
+                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
+                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
+                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Inicio / Hero con Tema Oscuro y Glow -->
-    <section id="inicio" class="hero" style="background-image: url('Test.png');">
+    <section id="inicio" class="hero" style="background-image: url('assets/Test.png');">
         <div class="hero-glow"></div>
         <div class="container hero-content">
             <div class="badge">Servicio Oficial 24/7</div>
@@ -51,6 +47,23 @@
             <div class="btn-group">
                 <a href="#contacto" class="btn btn-primary">Contáctanos Hoy <i class="fas fa-arrow-right"></i></a>
                 <a href="catalogo.html" class="btn btn-secondary">Ver Catálogo <i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section id="mision" class="section">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+            <div class="mision-content">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">Nuestra Misión</h2>
+                <div class="accent-line" style="margin-left: 0;"></div>
+                <p style="font-size: 1.15rem; color: var(--text-light); margin-bottom: 25px;">
+                    Proveer servicios integrales y soluciones de la más alta calidad en prevención y atención de emergencias, protegiendo la vida, el patrimonio y el medio ambiente, a través de tecnología avanzada y personal altamente calificado para tranquilidad de nuestros clientes.
+                </p>
+                <a href="#contacto" class="btn btn-secondary">Contactar Asesor <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="mision-img" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <img src="assets/Test.png" alt="Misión Bomberos" style="width: 100%; display: block; filter: contrast(1.1);">
             </div>
         </div>
     </section>
@@ -68,19 +81,27 @@
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-fire-extinguisher"></i></div>
                     <h3>Prevención y Seguridad</h3>
-                    <p>Asesorías y planes de emergencia para empresas y conjuntos residenciales con tecnología de punta.
-                    </p>
+                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
+                        <p>Asesorías y planes de emergencia para empresas y conjuntos residenciales con tecnología de punta en materia preventiva.</p>
+                    </div>
+                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
+                </div>
+                <!-- Nuevos Servicios -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-tools"></i></div>
+                    <h3>Mantenimiento de Extintores</h3>
+                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
+                        <p>Recarga, inspección hidrostática y mantenimiento preventivo de todo tipo de extintores bajo normativa vigente.</p>
+                    </div>
+                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
                 </div>
                 <div class="service-card">
-                    <div class="icon"><i class="fas fa-truck-medical"></i></div>
-                    <h3>Atención Prehospitalaria</h3>
-                    <p>Protocolos de primer nivel mundial y traslados seguros en caso de cualquier eventualidad.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-helicopter"></i></div>
-                    <h3>Rescate Especializado</h3>
-                    <p>Operaciones quirúrgicas de rescate en terrenos de difícil acceso, estructuras colapsadas y
-                        alturas extremas.</p>
+                    <div class="icon"><i class="fas fa-tint"></i></div>
+                    <h3>Redes de Control de Incendios</h3>
+                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
+                        <p>Diseño, instalación y mantenimiento de gabinetes, rociadores automáticos y sistemas de bombeo contra incendios.</p>
+                    </div>
+                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
                 </div>
             </div>
         </div>
@@ -123,6 +144,43 @@
             <div class="text-center mt-5">
                 <a href="clientes.html" class="btn btn-secondary">Conocer Todos Nuestros Casos de Éxito <i
                         class="fas fa-building"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog y Guías -->
+    <section id="blog" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Consejos y Guías Prácticas</h2>
+                <div class="accent-line"></div>
+                <p>Mantente informado sobre prevención de incendios y seguridad.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Guia 1" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Cómo usar un extintor ABC correctamente</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">Aprende los pasos básicos (Tirar, Apuntar, Apretar, Barrer) para apagar un conato de incendio.</p>
+                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Guia 2" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Plan de Evacuación Familiar</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">Guía práctica para construir un plan de escape seguro para tu familia en caso de emergencias.</p>
+                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card" style="padding: 0; text-align: left;">
+                    <img src="assets/Test.png" alt="Guia 3" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Importancia del Mantenimiento Anual</h3>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">¿Por qué debes recargar tus extintores cada año aunque no los hayas usado? Descúbrelo aquí.</p>
+                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -179,6 +237,14 @@
     <!-- Footer Elegante -->
     <footer>
         <div class="container">
+            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
+                <!-- Social Media Links -->
+                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            </div>
             <p>&copy; 2026 Cuerpo Oficial de Bomberos de Bogotá. Modernización y Eficiencia Operativa.</p>
         </div>
     </footer>
@@ -196,8 +262,24 @@
         </a>
     </div>
 
+    <!-- Sidebar Global -->
+    <div id="globalSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Menú Opciones</h3>
+            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
+            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
+            <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+        </ul>
+    </div>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

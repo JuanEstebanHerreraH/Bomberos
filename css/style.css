@@ -141,9 +141,12 @@ header.scrolled .header-container {
 }
 
 .logo img {
-    height: 40px;
+    height: 75px;
     width: auto;
     object-fit: contain;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 2px;
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
 
@@ -1245,6 +1248,29 @@ footer {
 @media (max-width: 768px) {
     .section { padding: 4rem 0; }
     .hero h1 { font-size: 2.5rem; }
+    
+    .header-container {
+        flex-direction: column;
+        height: auto !important;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    .company-brand {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px !important;
+        margin-top: 5px;
+    }
     
     .clients-grid { grid-template-columns: 1fr; }
     .client-card { flex-direction: column; text-align: center; }

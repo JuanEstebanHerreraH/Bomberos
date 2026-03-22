@@ -70,6 +70,15 @@ app.switchView = function(viewId) {
         document.getElementById('bottomNav').style.display = 'flex';
     }
 
+    const logoArea = document.querySelector('.logo-area');
+    if (logoArea) {
+        if (viewId === 'home') {
+            logoArea.style.display = 'block';
+        } else {
+            logoArea.style.display = 'none';
+        }
+    }
+
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     
@@ -148,7 +157,7 @@ app.renderProducts = function(productosAListar) {
         item.className = 'prod-card-grid';
         item.innerHTML = `
             <div class="prod-img-box">
-                <img src="../${p.imagen_url}" alt="${p.nombre}" loading="lazy" onerror="this.src='../assets/Test.png'">
+                <img src="../${p.imagen_url}" alt="${p.nombre}" loading="lazy" onerror="this.src='../assets/Bombero_Assets/Accesorios_Bombero.png'">
             </div>
             <div class="prod-info-box">
                 <h3>${p.nombre}</h3>
@@ -168,7 +177,7 @@ app.renderClients = function() {
         container.innerHTML += `
             <div class="client-card-ml">
                 <div class="client-header">
-                    <img src="../${c.logo_url}" alt="${c.nombre}" onerror="this.src='../assets/Test.png'">
+                    <img src="../${c.logo_url}" alt="${c.nombre}" onerror="this.src='../assets/Bombero_Assets/Accesorios_Bombero.png'">
                     <h3>${c.nombre}</h3>
                 </div>
                 <p class="client-desc"><i class="fas fa-check-circle" style="color: #00a650; margin-right: 5px;"></i>${c.trabajo_realizado}</p>
@@ -230,7 +239,7 @@ app.updateCartUI = function() {
         total += (p.precio * qty);
         container.innerHTML += `
             <div class="cart-item-ml">
-                <img src="../${p.imagen_url}" onerror="this.src='../assets/Test.png'">
+                <img src="../${p.imagen_url}" onerror="this.src='../assets/Bombero_Assets/Accesorios_Bombero.png'">
                 <div class="cart-item-info">
                     <h4>${p.nombre} ${qty > 1 ? `(x${qty})` : ''}</h4>
                     <div class="cart-item-price">$${(p.precio * qty).toLocaleString('es-CO')}</div>

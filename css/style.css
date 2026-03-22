@@ -226,6 +226,7 @@ nav .nav-links a.active::after {
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     color: var(--text-main);
@@ -236,8 +237,54 @@ nav .nav-links a.active::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(15, 17, 21, 0.95) 0%, rgba(15, 17, 21, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(15, 17, 21, 0.6) 0%, rgba(15, 17, 21, 0.3) 100%);
     z-index: -1;
+}
+
+/* Hero PC Background Carousel */
+.hero-bg-carousel {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -2;
+}
+
+.hero-bg-carousel .slide {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroFade 15s infinite;
+}
+
+.bg-slide-1 {
+    background-image: url('../assets/Bombero_Assets/Imagen_Personas_Bomberos.png');
+    animation-delay: 0s;
+}
+
+.bg-slide-2 {
+    background-image: url('../assets/Extintores_Assets/Extintores.jpeg');
+    animation-delay: 5s;
+}
+
+.bg-slide-3 {
+    background-image: url('../assets/Bombero_Assets/Imagen_Bombero.png');
+    animation-delay: 10s;
+}
+
+@keyframes heroFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .hero-bg-carousel {
+        display: none !important;
+    }
 }
 
 .hero-glow {

@@ -416,7 +416,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             updateCartUI();
             if(!shoppingCartSidebar.classList.contains('open')) {
-                toggleCart();
+                if(window.innerWidth > 768) {
+                    toggleCart();
+                }
             }
         }
 

@@ -1285,6 +1285,15 @@ footer {
     header nav::-webkit-scrollbar { display: none; }
     nav .nav-links { gap: 10px !important; }
     nav .nav-links a { font-size: 0.85rem !important; padding: 5px !important; white-space: nowrap; }
+    nav a[href="mobile-app/index.html"], nav a[href="../mobile-app/index.html"] { display: none !important; }
+    
+    /* MENU TOGGLE RESPONSIVENESS */
+    .sidebar-toggle .fa-ellipsis-v { display: none !important; }
+    .sidebar-toggle span {
+        font-size: 1.1rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
     
     /* READABILITY AND CENTERING */
     .clients-grid { grid-template-columns: 1fr; }

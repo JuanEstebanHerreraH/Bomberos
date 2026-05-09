@@ -31,7 +31,7 @@ body.light-mode {
 }
 
 /* --- BASE --- */
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: hidden; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1848,7 +1848,7 @@ body.light-mode .badge-tag { background: rgba(215,38,56,0.12); border-color: rgb
     .blog-card-horizontal .blog-img-wrap { width: 100% !important; height: 160px !important; }
 }
 @media (max-width: 768px) {
-    .mission-years-badge { width: 76px; height: 76px; top: -10px; right: -10px; }
+    .mission-years-badge { width: 76px; height: 76px; top: -10px; right: 10px; }
     .myd-num { font-size: 1.2rem; }
     .mission-quote { font-size: .9rem; }
 }

@@ -1,300 +1,450 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA PLANTA DE EXTINTORES EL BOMBERO LTDA
-        | Oficial</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <title>LA PLANTA DE EXTINTORES EL BOMBERO LTDA | Protección Certificada</title>
+    <meta name="description" content="Más de 20 años protegiendo vidas y patrimonio. Extintores, sistemas contra incendio y capacitación certificada en Colombia.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- Header Pegajoso Premium -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
-                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
+<!-- NAVBAR mejorado -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <div class="nav-logo-wrap">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo" class="logo-img">
+                <span class="nav-logo-pulse"></span>
             </div>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
-                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
-                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
-                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
-                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
+            <div class="d-flex flex-column lh-1">
+                <span class="brand-name">EL BOMBERO LTDA</span>
+                <span class="brand-sub d-none d-md-block">LA PLANTA DE EXTINTORES</span>
+            </div>
+        </a>
+        <div class="d-flex align-items-center gap-2 ms-auto">
+            <button id="themeToggleBtn" class="btn btn-icon" aria-label="Cambiar tema"><i class="fas fa-moon"></i></button>
+            <a href="cotizacion.html" class="btn btn-danger btn-sm">Cotización <i class="fas fa-shopping-cart ms-1"></i></a>
+            <button class="btn btn-icon ms-1" id="sidebar-toggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero-section">
+    <div class="hero-bg">
+        <div class="hero-slide slide-1"></div>
+        <div class="hero-slide slide-2"></div>
+        <div class="hero-slide slide-3"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <!-- Texto vertical lateral -->
+    <div class="hero-vertical-text">PROTECCIÓN — PREVENCIÓN — RESCATE</div>
+
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <span class="badge-tag"><i class="fas fa-shield-alt me-1"></i> Certificado NFPA · Servicio 24/7</span>
+                <h1 class="hero-title mt-3">
+                    Protegemos<br>
+                    <span class="text-accent hero-accent-word">vidas</span> y<br>
+                    <span class="hero-title-light">patrimonio</span>
+                </h1>
+                <p class="hero-desc">Soluciones certificadas en prevención de incendios. Tecnología de clase mundial, respaldo de más de 20 años en Colombia.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="#contacto" class="btn btn-danger btn-lg hero-cta-primary">
+                        Solicitar Asesoría <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="catalogo.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-fire-extinguisher me-2"></i>Ver Equipos
+                    </a>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Inicio / Hero con Tema Oscuro y Glow -->
-    <section id="inicio" class="hero" style="background-image: url('assets/Bombero_Assets/Imagen_Personas_Bomberos.png');">
-        
-        <!-- Background Slider for PC -->
-        <div class="hero-bg-carousel">
-            <div class="slide bg-slide-1"></div>
-            <div class="slide bg-slide-2"></div>
-            <div class="slide bg-slide-3"></div>
-        </div>
-
-        <div class="hero-glow"></div>
-        <div class="container hero-content">
-            <div class="badge">Servicio Oficial 24/7</div>
-            <h1>Protegemos la vida y el <span>patrimonio de las personas</span></h1>
-            <p>Servicio, valor y entrega. Conoce nuestros servicios especializados, productos certificados y clientes
-                destacados con diseño y funcionalidad de otro nivel.</p>
-            <div class="btn-group">
-                <a href="#contacto" class="btn btn-primary">Contáctanos Hoy <i class="fas fa-arrow-right"></i></a>
-                <a href="catalogo.html" class="btn btn-secondary">Ver Catálogo <i class="fas fa-shopping-bag"></i></a>
             </div>
         </div>
-    </section>
 
-    <!-- Misión y Visión -->
-    <section id="mision" class="section">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
-            <div class="mision-content">
-                <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-weight: 800;">Nuestra Misión</h2>
-                <div class="accent-line" style="margin-left: 0;"></div>
-                <p style="font-size: 1.15rem; color: var(--text-light); margin-bottom: 25px;">
-                    Proveer servicios integrales y soluciones de la más alta calidad en prevención y atención de emergencias, protegiendo la vida, el patrimonio y el medio ambiente, a través de tecnología avanzada y personal altamente calificado para tranquilidad de nuestros clientes.
-                </p>
-                <a href="#contacto" class="btn btn-secondary">Contactar Asesor <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="mision-img" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <img src="assets/Bombero_Assets/Imagen_Bombero.png" alt="Misión Bomberos" style="width: 100%; display: block; filter: contrast(1.1);">
+        <!-- Tarjeta flotante certificación -->
+        <div class="hero-cert-card d-none d-lg-flex">
+            <i class="fas fa-certificate text-danger fa-2x"></i>
+            <div>
+                <div class="fw-bold" style="font-size:.85rem">Certificación vigente</div>
+                <div style="font-size:.75rem;color:rgba(255,255,255,.6)">NFPA · DIGER · ICONTEC</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Servicios -->
-    <section id="servicios" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nuestros Servicios</h2>
+    <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- STATS BAR — animados -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="row g-0 text-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-number">+</span>
+                    <span class="stat-label">Años de experiencia</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span><span class="stat-number">+</span>
+                    <span class="stat-label">Clientes satisfechos</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="80">0</span><span class="stat-number">+</span>
+                    <span class="stat-label">Productos certificados</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Atención permanente</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MISIÓN — diseño editorial asimétrico -->
+<section id="mision" class="section-pad mission-editorial">
+    <div class="mission-watermark">20+</div>
+    <div class="container position-relative">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-animate="fade-right">
+                <div class="mission-img-wrap">
+                    <img src="assets/Bombero_Assets/Imagen_Bombero.png" alt="Misión El Bombero" class="img-fluid">
+                    <div class="mission-badge">
+                        <i class="fas fa-fire-extinguisher"></i>
+                        <span>Certificados NFPA</span>
+                    </div>
+                    <!-- Decorativo: años -->
+                    <div class="mission-years-badge">
+                        <span class="myd-num">+20</span>
+                        <span class="myd-label">AÑOS<br>PROTEGIENDO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7" data-animate="fade-left">
+                <span class="section-eyebrow">Quiénes somos</span>
+                <h2 class="section-title">Una empresa<br>que <span class="text-accent">salva vidas</span></h2>
                 <div class="accent-line"></div>
-                <p>Ofrecemos atención a emergencias, prevención integral y capacitación especializada adaptada a las
-                    necesidades modernas.</p>
+                <!-- Cita editorial -->
+                <blockquote class="mission-quote">
+                    "Cada extintor instalado, cada brigada capacitada y cada sistema activado es una vida protegida."
+                </blockquote>
+                <p class="section-desc">Proveer servicios integrales y soluciones de la más alta calidad en prevención y atención de emergencias, protegiendo la vida, el patrimonio y el medio ambiente, a través de tecnología avanzada y personal altamente calificado.</p>
+                <div class="d-flex gap-4 mt-4 mission-values">
+                    <div class="mval"><i class="fas fa-check-circle text-danger mb-1"></i><span>Integridad</span></div>
+                    <div class="mval"><i class="fas fa-check-circle text-danger mb-1"></i><span>Compromiso</span></div>
+                    <div class="mval"><i class="fas fa-check-circle text-danger mb-1"></i><span>Excelencia</span></div>
+                </div>
+                <a href="#contacto" class="btn btn-outline-danger mt-4">Hablar con un asesor <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-fire-extinguisher"></i></div>
-                    <h3>Prevención y Seguridad</h3>
-                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
+        </div>
+    </div>
+</section>
+
+<!-- SERVICIOS — layout asimétrico destacado -->
+<section id="servicios" class="section-pad section-alt servicios-editorial">
+    <div class="servicios-fire-line"></div>
+    <div class="container">
+        <div class="row mb-5 align-items-end">
+            <div class="col-lg-6">
+                <span class="section-eyebrow">Lo que hacemos</span>
+                <h2 class="section-title mb-0">Nuestros<br><span class="text-accent">Servicios</span></h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <p class="section-desc mb-0">Atención a emergencias, prevención integral y capacitación especializada adaptada a las necesidades modernas.</p>
+            </div>
+        </div>
+        <div class="accent-line mb-5"></div>
+
+        <!-- Grid asimétrico: 1 grande + 2 pequeñas -->
+        <div class="row g-4">
+            <!-- Card FEATURED grande -->
+            <div class="col-lg-6">
+                <div class="service-card service-card-featured h-100">
+                    <div class="scf-bg" style="background-image:url('assets/Servicios_Assets/Asesorias.jpeg')"></div>
+                    <div class="scf-content">
+                        <div class="service-icon mb-3"><i class="fas fa-fire-extinguisher"></i></div>
+                        <div class="scf-num">01</div>
+                        <h3>Prevención y Seguridad</h3>
                         <p>Asesorías y planes de emergencia para empresas y conjuntos residenciales con tecnología de punta en materia preventiva.</p>
-                    </div>
-                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
-                </div>
-                <!-- Nuevos Servicios -->
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-tools"></i></div>
-                    <h3>Mantenimiento de Extintores</h3>
-                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
-                        <p>Recarga, inspección hidrostática y mantenimiento preventivo de todo tipo de extintores bajo normativa vigente.</p>
-                    </div>
-                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-tint"></i></div>
-                    <h3>Redes de Control de Incendios</h3>
-                    <div class="service-desc" style="max-height: 48px; overflow: hidden; transition: max-height 0.4s ease;">
-                        <p>Diseño, instalación y mantenimiento de gabinetes, rociadores automáticos y sistemas de bombeo contra incendios.</p>
-                    </div>
-                    <button class="btn-ver-mas" style="background: none; border: none; color: var(--primary-red); cursor: pointer; margin-top: 15px; font-weight: 600;">Ver Más <i class="fas fa-chevron-down"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Productos Destacados -->
-    <section id="productos-destacados" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Equipamiento Destacado</h2>
-                <div class="accent-line"></div>
-                <p>Equipos profesionales de extinción y prevención de clase mundial.</p>
-            </div>
-
-            <!-- Grilla de JS (Solo mostrará 3) -->
-            <div class="products-grid" id="home-products-container">
-                <!-- Se llenará dinámicamente -->
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="catalogo.html" class="btn btn-primary">Explorar Catálogo de Productos Completo <i
-                        class="fas fa-box-open"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clientes Destacados -->
-    <section id="clientes-destacados" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nuestros Aliados Estratégicos</h2>
-                <div class="accent-line"></div>
-                <p>Mejores empresas de Colombia que han puesto su seguridad e infraestuctura en nuestras manos.</p>
-            </div>
-
-            <div class="clients-grid" id="home-clients-container">
-                <!-- Se llenará dinámicamente (Solo 3) -->
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="clientes.html" class="btn btn-secondary">Conocer Todos Nuestros Casos de Éxito <i
-                        class="fas fa-building"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog y Guías -->
-    <section id="blog" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Consejos y Guías Prácticas</h2>
-                <div class="accent-line"></div>
-                <p>Mantente informado sobre prevención de incendios y seguridad.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Extintores_Assets/Exintor portatil BC.jpg" alt="Guia 1" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 25px;">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Cómo usar un extintor ABC correctamente</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">Aprende los pasos básicos (Tirar, Apuntar, Apretar, Barrer) para apagar un conato de incendio.</p>
-                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contacto" class="btn btn-danger mt-2">Solicitar Asesoría <i class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Servicios_Assets/Asesorias.jpeg" alt="Guia 2" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 25px;">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Plan de Evacuación Familiar</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">Guía práctica para construir un plan de escape seguro para tu familia en caso de emergencias.</p>
-                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- 2 cards pequeñas apiladas -->
+            <div class="col-lg-6">
+                <div class="row g-4 h-100">
+                    <div class="col-12">
+                        <div class="service-card h-100">
+                            <div class="d-flex align-items-start gap-4">
+                                <div class="service-icon flex-shrink-0"><i class="fas fa-tools"></i></div>
+                                <div>
+                                    <div class="scf-num-sm">02</div>
+                                    <h3>Mantenimiento de Extintores</h3>
+                                    <div class="service-desc-wrap">
+                                        <p>Recarga, inspección hidrostática y mantenimiento preventivo de todo tipo de extintores bajo normativa vigente.</p>
+                                    </div>
+                                    <button class="btn-ver-mas btn btn-link p-0 text-danger fw-semibold mt-2">Ver Más <i class="fas fa-chevron-down ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Servicios_Assets/Cumplimiento Normativo en Seguridad.jpeg" alt="Guia 3" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 25px;">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Importancia del Mantenimiento Anual</h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px;">¿Por qué debes recargar tus extintores cada año aunque no los hayas usado? Descúbrelo aquí.</p>
-                        <a href="#" style="color: var(--primary-red); font-weight: 600;">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                    <div class="col-12">
+                        <div class="service-card h-100">
+                            <div class="d-flex align-items-start gap-4">
+                                <div class="service-icon flex-shrink-0"><i class="fas fa-tint"></i></div>
+                                <div>
+                                    <div class="scf-num-sm">03</div>
+                                    <h3>Redes Contra Incendios</h3>
+                                    <div class="service-desc-wrap">
+                                        <p>Diseño, instalación y mantenimiento de gabinetes, rociadores automáticos y sistemas de bombeo contra incendios.</p>
+                                    </div>
+                                    <button class="btn-ver-mas btn btn-link p-0 text-danger fw-semibold mt-2">Ver Más <i class="fas fa-chevron-down ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contacto / Formulario -->
-    <section id="contacto" class="section">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h2>¿Necesitas asesoría o equipos técnicos?</h2>
-                <p>Déjanos tus datos, nuestro equipo de ingenieros y especialistas se pondrá en contacto contigo a la
-                    brevedad.</p>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Sede Principal</strong><br>
-                        Barrio La Fortuna - Carrera 5 #17 – 32
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Sede 2</strong><br>
-                        Edificio Bar del Campo - Av 9 #15 – 24
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Línea de Atención / WhatsApp</strong><br>
-                        +57 312 242 7212
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>Correo Electrónico</strong><br>
-                        ventas@plantaelbombero.com
-                    </div>
-                </div>
+<!-- PRODUCTOS DESTACADOS -->
+<section id="productos-destacados" class="section-pad">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7">
+                <span class="section-eyebrow">Nuestro inventario</span>
+                <h2 class="section-title mb-0">Equipamiento <span class="text-accent">Destacado</span></h2>
+                <div class="accent-line mt-3 mb-0"></div>
             </div>
-
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Nombre Completo o Razón Social</label>
-                    <input type="text" id="name" required placeholder="Ingresa tu nombre o empresa">
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico de Contacto</label>
-                    <input type="email" id="email" required placeholder="correo@institucional.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Detalla tu Solicitud</label>
-                    <textarea id="message" rows="4" required
-                        placeholder="¿En qué servicio o producto estás interesado?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensaje Seguro</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Elegante -->
-    <footer>
-        <div class="container">
-            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
-                <!-- Social Media Links -->
-                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+                <a href="catalogo.html" class="btn btn-outline-danger">Ver catálogo completo <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
-            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
         </div>
-    </footer>
+        <div class="row g-4" id="home-products-container"></div>
+    </div>
+</section>
 
-    <!-- Elementos Flotantes (WhatsApp + Subir) -->
-    <div class="floating-actions">
-        <!-- WhatsApp Botón -->
-        <a href="https://wa.me/573122427212?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20productos."
-            class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <!-- Subir Arriba -->
-        <a href="#" class="float-btn scroll-top" id="scrollTopBtn" aria-label="Ir Arriba">
-            <i class="fas fa-chevron-up"></i>
+<!-- CLIENTES — marquee auto-scroll -->
+<section id="clientes-destacados" class="section-pad section-alt">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-eyebrow">Quiénes confían en nosotros</span>
+            <h2 class="section-title">Aliados que nos <span class="text-accent">respaldan</span></h2>
+            <div class="accent-line mx-auto"></div>
+        </div>
+    </div>
+    <!-- Marquee de logos -->
+    <div class="clients-marquee-wrap">
+        <div class="clients-marquee" id="home-clients-container"></div>
+    </div>
+    <div class="container text-center mt-5">
+        <a href="clientes.html" class="btn btn-outline-danger btn-lg">
+            Ver Todos los Casos de Éxito <i class="fas fa-building ms-2"></i>
         </a>
     </div>
+</section>
 
-    <!-- Sidebar Global -->
-    <div id="globalSidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h3>Menú Opciones</h3>
-            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+<!-- BLOG / GUÍAS — layout horizontal editorial -->
+<section id="blog" class="section-pad blog-editorial">
+    <div class="blog-editorial-bg"></div>
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-6">
+                <span class="section-eyebrow">Aprende con nosotros</span>
+                <h2 class="section-title mb-0">Guías y <span class="text-accent">Consejos</span></h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <p class="section-desc mb-0">Mantente informado sobre prevención de incendios y seguridad industrial.</p>
+            </div>
         </div>
-        <ul class="sidebar-links">
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
-            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
-            <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
-            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
-        </ul>
+        <div class="row g-4">
+            <!-- Article grande -->
+            <div class="col-lg-6">
+                <article class="blog-card blog-card-featured">
+                    <div class="blog-img-wrap" style="height:300px">
+                        <img src="assets/Extintores_Assets/Exintor portatil BC.jpg" alt="Guía extintor ABC" loading="lazy">
+                        <span class="blog-tag">Guía Práctica</span>
+                        <div class="blog-featured-label">LECTURA RECOMENDADA</div>
+                    </div>
+                    <div class="blog-body">
+                        <h3>Cómo usar un extintor ABC correctamente</h3>
+                        <p>Aprende los pasos básicos (Tirar, Apuntar, Apretar, Barrer) para apagar un conato de incendio de forma segura y efectiva.</p>
+                        <a href="#" class="blog-link">Leer Artículo <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- 2 articles pequeños -->
+            <div class="col-lg-6">
+                <div class="d-flex flex-column gap-4 h-100">
+                    <article class="blog-card blog-card-horizontal">
+                        <div class="blog-img-wrap" style="width:130px;height:100%;flex-shrink:0">
+                            <img src="assets/Servicios_Assets/Asesorias.jpeg" alt="Plan de evacuación" loading="lazy">
+                            <span class="blog-tag" style="font-size:.6rem;padding:2px 8px">Seguridad</span>
+                        </div>
+                        <div class="blog-body" style="padding:20px">
+                            <h3 style="font-size:.95rem">Plan de Evacuación Familiar</h3>
+                            <p style="font-size:.82rem">Cómo construir un plan de escape seguro para tu familia o empresa.</p>
+                            <a href="#" class="blog-link" style="font-size:.8rem">Leer <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card blog-card-horizontal">
+                        <div class="blog-img-wrap" style="width:130px;height:100%;flex-shrink:0">
+                            <img src="assets/Servicios_Assets/Cumplimiento Normativo en Seguridad.jpeg" alt="Mantenimiento anual" loading="lazy">
+                            <span class="blog-tag" style="font-size:.6rem;padding:2px 8px">Normativa</span>
+                        </div>
+                        <div class="blog-body" style="padding:20px">
+                            <h3 style="font-size:.95rem">Importancia del Mantenimiento Anual</h3>
+                            <p style="font-size:.82rem">¿Por qué debes recargar tus extintores cada año aunque no los hayas usado?</p>
+                            <a href="#" class="blog-link" style="font-size:.8rem">Leer <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+</section>
 
-    <!-- Scripts -->
-    <script src="js/script.js"></script>
+<!-- CONTACTO -->
+<section id="contacto" class="section-pad section-alt">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-5" data-animate="fade-right">
+                <span class="section-eyebrow">Estamos para ti</span>
+                <h2 class="section-title">¿Necesitas <span class="text-accent">asesoría</span> o equipos?</h2>
+                <div class="accent-line"></div>
+                <p class="section-desc">Nuestro equipo de ingenieros se pondrá en contacto a la brevedad.</p>
+                <div class="contact-info-list mt-4">
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong>Sede Principal</strong><p>Barrio La Fortuna – Carrera 5 #17 – 32</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong>Sede 2</strong><p>Edificio Bar del Campo – Av 9 #15 – 24</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><strong>WhatsApp / Línea</strong><p>+57 312 242 7212</p></div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><strong>Correo</strong><p>ventas@plantaelbombero.com</p></div>
+                    </div>
+                </div>
+                <!-- WhatsApp directo -->
+                <a href="https://wa.me/573122427212?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios." target="_blank" rel="noopener" class="btn btn-success mt-4 d-inline-flex align-items-center gap-2">
+                    <i class="fab fa-whatsapp fa-lg"></i> Escribir por WhatsApp
+                </a>
+            </div>
+            <div class="col-lg-7" data-animate="fade-left">
+                <div class="contact-form-card">
+                    <form id="contactForm" novalidate>
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Nombre Completo o Razón Social</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Tu nombre o empresa">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="email" class="form-control" required placeholder="correo@institucional.com">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Detalla tu Solicitud</label>
+                            <textarea id="message" class="form-control" rows="4" required placeholder="¿En qué servicio o producto estás interesado?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-lg w-100">
+                            Enviar Mensaje <i class="fas fa-paper-plane ms-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row align-items-center gy-3">
+            <div class="col-md-4 text-center text-md-start">
+                <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
+                    <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo" style="height:40px;border-radius:50%;background:#fff;padding:2px;">
+                    <div>
+                        <div class="fw-bold" style="font-size:.9rem;line-height:1.2">EL BOMBERO LTDA</div>
+                        <div style="font-size:.72rem;color:var(--muted)">LA PLANTA DE EXTINTORES</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+                <p class="footer-copy mb-0">&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING ACTIONS -->
+<div class="floating-actions">
+    <a href="https://wa.me/573122427212?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20productos." class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="float-btn scroll-top" id="scrollTopBtn" aria-label="Ir Arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</div>
+
+<!-- GLOBAL SIDEBAR -->
+<div id="globalSidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h3>Menú</h3>
+        <button class="btn btn-icon" id="closeSidebarBtn" aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
+        <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Catálogo</a></li>
+        <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+        <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+        <li class="sidebar-divider"></li>
+        <li>
+            <a href="mobile-app/index.html" target="_blank" class="sidebar-app-link">
+                <i class="fas fa-mobile-alt"></i> Previsualización App
+                <span class="app-badge">NUEVO</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<!-- MODAL GLOBAL -->
+<div id="globalModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <button class="btn-modal-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización | LA PLANTA DE EXTINTORES EL BOMBERO LTDA</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Pegajoso -->
+    <header id="header" class="scrolled"> <!-- Siempre Scrolled en subpáginas para evitar transparencia sobre el contenido -->
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
+                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
+            </div>
+            <nav style="display: flex; align-items: center;">
+                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; margin-right: 20px; outline:none;"><i class="fas fa-moon"></i></button>
+                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px; margin-right: 20px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
+                <a href="#" id="openCartBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem; position: relative; margin-right: 20px;">
+                    Ver Carrito <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCountBadge" class="cart-badge" style="display:none;">0</span>
+                </a>
+                <div class="sidebar-toggle" id="sidebar-toggle" style="display: inline-block; font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
+                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Encabezado de la página -->
+    <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cotización en Línea</h2>
+                <div class="accent-line"></div>
+                <p>Arma tu cotización de equipos contra incendio y protección personal. Mostrando precios de catálogo.</p>
+            </div>
+            
+            <!-- Barra de Búsqueda Mejorada -->
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="catalogSearchInput" placeholder="Busca por nombre, categoría o especificación técnica...">
+            </div>
+
+            <!-- Filtros por Categoría Mejorados -->
+            <button id="openFilterBtn" class="btn btn-secondary" style="margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fas fa-filter"></i> Filtros de Modelos y Categorías</button>
+            <div id="filterSidebar" class="filter-sidebar">
+                <div class="filter-header">
+                    <h3><i class="fas fa-filter"></i> Filtros Disponibles</h3>
+                    <i class="fas fa-times close-filter" id="closeFilterBtn"></i>
+                </div>
+                <div class="filter-section">
+                    <h4>Categorías</h4>
+                    <div class="category-filters" id="categoryFiltersContainer" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex-wrap: nowrap; overflow-x: hidden;">
+                        <button class="cat-btn active" data-category="Todos" style="width: 100%; text-align: left;">Todas las Categorías</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor Principal de la Cotización -->
+            <div class="products-grid" id="cotizacion-products-container">
+                <!-- Se llenará vía JS -->
+            </div>
+            
+            <div id="catalog-no-products" style="display:none; text-align:center; padding: 40px; color: var(--text-light); background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                <h3>No se encontraron productos</h3>
+                <p>Intenta cambiar los términos de búsqueda o selecciona otra categoría.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
+                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp & Volver al tope -->
+    <div class="floating-actions">
+        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Sidebar Global -->
+    <div id="globalSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Menú Opciones</h3>
+            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
+            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
+            <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+        </ul>
+    </div>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Shopping Cart Flotante -->
+    <div id="shoppingCartSidebar" class="shopping-cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mi Cotización</h3>
+            <span class="close-cart" id="closeCartBtn">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Items del carrito -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cartTotalPrice">$0 COP</span></div>
+            <button class="btn btn-primary" id="btnComprar" style="width: 100%; margin-top: 15px;">Comprar Ahora</button>
+        </div>
+    </div>
+    
+    <!-- Modal Checkout -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-btn" id="closeCheckoutBtn">&times;</span>
+            <div class="modal-body">
+                <h2 style="margin-bottom: 20px;">Completar Compra</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="chkNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" id="chkEmail" required placeholder="tu-correo@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección de Envío</label>
+                        <input type="text" id="chkDireccion" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Pagar <span id="btnPagarTotal"></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pago Exitoso -->
+    <div id="successModal" class="modal">
+        <div class="modal-content" style="max-width: 500px; text-align: center;">
+            <span class="close-btn" id="closeSuccessBtn">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-check-circle" style="font-size: 5rem; color: #4ADE80; margin-bottom: 20px;"></i>
+                <h2 style="color: #4ADE80; margin-bottom: 10px;">¡Pago Exitoso!</h2>
+                <p>Su factura ha sido enviada a: <strong id="successEmailText" style="color:#FFF;"></strong></p>
+                <div style="margin-top: 15px; margin-bottom: 30px;">
+                    <button class="btn btn-secondary" id="btnEditEmail" style="padding: 10px 20px; font-size: 0.9rem;">Editar Correo y Reenviar Factura <i class="fas fa-edit"></i></button>
+                </div>
+                
+                <h3 style="margin-bottom: 15px;">Contáctanos directamente:</h3>
+                <div style="display: flex; justify-content: center; gap: 20px; font-size: 1.1rem;">
+                    <a href="https://wa.me/573122427212" class="btn btn-secondary" style="border-color: #25D366; color: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:ventas@plantaelbombero.com" class="btn btn-secondary" style="border-color: #EA4335; color: #EA4335;"><i class="fas fa-envelope"></i> Correo Electrónico</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Correo -->
+    <div id="editEmailModal" class="modal" style="z-index: 3000;">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <span class="close-btn" id="closeEditEmailBtn">&times;</span>
+            <div class="modal-body">
+                <h2 style="margin-bottom: 15px;">Actualizar Correo</h2>
+                <div class="form-group" style="text-align: left;">
+                    <input type="email" id="newEmailInput" required>
+                </div>
+                <button class="btn btn-primary" id="btnUpdateEmail" style="width: 100%;">Actualizar y Reenviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

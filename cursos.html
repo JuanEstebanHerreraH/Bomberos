@@ -4,122 +4,478 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Especializados | LA PLANTA DE EXTINTORES EL BOMBERO LTDA</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <meta name="description" content="Formación certificada en control de incendios, primeros auxilios y rescate. Avalado por el Sistema Nacional de Bomberos de Colombia.">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header Pegajoso -->
-    <header id="header" class="scrolled">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
-                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
-            </div>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
-                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
-                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
-                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
-                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Encabezado de la página -->
-    <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <div class="section-header">
-                <h2>Cursos de Formación Bomberil</h2>
-                <div class="accent-line"></div>
-                <p>Capacitación avalada y regida bajo los estándares normativos de Colombia para brigadas industriales y personal de emergencias.</p>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo El Bombero" class="logo-img">
+                <span class="brand-name d-none d-md-inline">EL BOMBERO LTDA</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <button id="themeToggleBtn" class="btn btn-icon" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cotizacion.html" class="btn btn-danger btn-sm">
+                    Cotización <i class="fas fa-shopping-cart ms-1"></i>
+                </a>
+                <button class="btn btn-icon ms-1" id="sidebar-toggle" aria-label="Menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
+        </div>
+    </nav>
 
-            <div class="services-grid">
-                <!-- Curso 1 -->
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Servicios_Assets/Análisis de Riesgos Laborales.jpeg" alt="Curso 1" style="width: 100%; height: 230px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <span class="badge" style="margin-bottom: 15px;">Nivel Básico e Intermedio</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Control de Incendios Forestales</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Técnicas especializadas para contrarrestar conflagraciones en áreas de reserva natural y vegetación. Avalado por el Sistema Nacional de Bomberos.</p>
-                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
-                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 40 Horas</span>
-                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Presencial</span>
+    <!-- HERO CURSOS — Academia táctica -->
+    <section class="cursos-hero">
+        <div class="cursos-hero-bg">
+            <div class="cursos-hero-img" style="background-image:url('assets/Servicios_Assets/Análisis de Riesgos Laborales.jpeg')"></div>
+            <div class="cursos-hero-overlay"></div>
+            <!-- Líneas de scanlines táctica -->
+            <div class="cursos-scanlines"></div>
+        </div>
+        <div class="container cursos-hero-content">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7 py-5">
+                    <div class="cursos-tag-row mb-3">
+                        <span class="badge-tag"><i class="fas fa-certificate me-1"></i> Certificado NFPA</span>
+                        <span class="badge-tag ms-2"><i class="fas fa-shield-alt me-1"></i> Aval DIGER</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Formación que <span class="text-accent">salva vidas</span>
+                    </h1>
+                    <p class="hero-desc mt-3">
+                        Programas tácticos de alto impacto para brigadas industriales, empresas y cuerpos de rescate. Instructores certificados, simulacros reales.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#cursos-lista" class="btn btn-danger btn-lg">
+                            Ver Programas <i class="fas fa-arrow-down ms-2"></i>
+                        </a>
+                        <a href="index.html#contacto" class="btn btn-outline-light btn-lg">
+                            Inscribirse <i class="fas fa-user-graduate ms-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Indicadores de logro -->
+                    <div class="cursos-achievement-row mt-5">
+                        <div class="cach-item">
+                            <span class="cach-num">+200</span>
+                            <span class="cach-label">Egresados certificados</span>
                         </div>
-                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
+                        <div class="cach-sep"></div>
+                        <div class="cach-item">
+                            <span class="cach-num">3</span>
+                            <span class="cach-label">Niveles de formación</span>
+                        </div>
+                        <div class="cach-sep"></div>
+                        <div class="cach-item">
+                            <span class="cach-num">100%</span>
+                            <span class="cach-label">Aprobación</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Curso 2 -->
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Servicios_Assets/Pruebas Hidrostáticas.jpeg" alt="Curso 2" style="width: 100%; height: 230px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <span class="badge" style="margin-bottom: 15px;">Nivel Avanzado</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Primeros Auxilios Avanzados y RCP</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Curso intensivo sobre soporte vital básico, uso del DEA y estabilización de pacientes críticos bajo lineamientos del MINSALUD Colombia.</p>
-                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
-                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 20 Horas</span>
-                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Híbrido</span>
+                <!-- Panel flotante de características -->
+                <div class="col-lg-4 offset-lg-1 d-none d-lg-block">
+                    <div class="cursos-feature-panel">
+                        <div class="cfp-header">
+                            <i class="fas fa-graduation-cap text-danger me-2"></i>
+                            <span>¿Por qué elegirnos?</span>
                         </div>
-                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Curso 3 -->
-                <div class="service-card" style="padding: 0; text-align: left;">
-                    <img src="assets/Servicios_Assets/Pintura para Extintores.jpeg" alt="Curso 3" style="width: 100%; height: 230px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <span class="badge" style="margin-bottom: 15px;">Especialidad Táctica</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Rescate en Espacios Confinados</h3>
-                        <p style="color: var(--text-light); margin-bottom: 20px;">Prepárate para operar en atmósferas peligrosas y espacios reducidos cumpliendo estrictamente con la Normativa legal vigente de trabajo de alto riesgo en Colombia.</p>
-                        <div style="display: flex; gap: 10px; color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px;">
-                            <span><i class="fas fa-clock" style="color: var(--primary-red);"></i> 60 Horas</span>
-                            <span><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Presencial/Práctico</span>
-                        </div>
-                        <button class="btn btn-secondary" style="width: 100%;" onclick="alert('Funcionalidad de inscripción en desarrollo.')">Inscribirse en el Curso <i class="fas fa-arrow-right"></i></button>
+                        <ul class="cfp-list">
+                            <li><i class="fas fa-check-circle text-danger"></i> Instructores con más de 15 años</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Simulacros en campo real</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Certificado avalado DIGER</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Grupos reducidos (máx. 20)</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Material didáctico incluido</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Modalidad presencial e híbrida</li>
+                        </ul>
+                        <a href="index.html#contacto" class="btn btn-danger w-100 mt-3">
+                            Solicitar Información <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- NIVELES BANNER interactivos -->
+    <div class="cursos-levels-bar">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="clevel-item" data-nivel="basico" role="button" tabindex="0">
+                    <i class="fas fa-seedling"></i>
+                    <span>Básico</span>
+                </div>
+                <div class="clevel-item" data-nivel="avanzado" role="button" tabindex="0">
+                    <i class="fas fa-fire-alt"></i>
+                    <span>Avanzado</span>
+                </div>
+                <div class="clevel-item" data-nivel="especialidad" role="button" tabindex="0">
+                    <i class="fas fa-dragon"></i>
+                    <span>Especialidad</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LISTA DE CURSOS -->
+    <section id="cursos-lista" class="section-pad">
+        <div class="container">
+            <div class="text-center mb-5" data-animate="fade-up">
+                <span class="section-eyebrow">Programas Disponibles</span>
+                <h2 class="section-title">Elige tu Especialidad</h2>
+                <div class="accent-line mx-auto"></div>
+                <p class="section-desc mx-auto" style="max-width:560px">
+                    Cada curso es diseñado bajo estándares internacionales y adaptado a la normativa colombiana vigente.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Curso 1 -->
+                <div class="col-lg-4 col-md-6" data-animate="fade-up">
+                    <div class="curso-card h-100">
+                        <div class="curso-img-wrap">
+                            <img src="assets/Servicios_Assets/Análisis de Riesgos Laborales.jpeg" alt="Control de Incendios Forestales" loading="lazy">
+                            <div class="curso-level-badge nivel-basico">Básico / Intermedio</div>
+                            <div class="curso-img-overlay">
+                                <div class="curso-overlay-content">
+                                    <i class="fas fa-play-circle fa-2x mb-2"></i>
+                                    <span>Ver Detalles</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="curso-body">
+                            <div class="curso-meta mb-2">
+                                <span><i class="fas fa-clock text-danger me-1"></i> 40 Horas</span>
+                                <span><i class="fas fa-map-marker-alt text-danger me-1"></i> Presencial</span>
+                                <span><i class="fas fa-users text-danger me-1"></i> Máx. 20 personas</span>
+                            </div>
+                            <h3 class="curso-title">Control de Incendios Forestales</h3>
+                            <p class="curso-desc">Técnicas especializadas para contrarrestar conflagraciones en áreas de reserva natural y vegetación. Avalado por el Sistema Nacional de Bomberos.</p>
+                            <div class="curso-skills">
+                                <span class="skill-tag">Cortafuegos</span>
+                                <span class="skill-tag">EPI Forestal</span>
+                                <span class="skill-tag">Trabajo en equipo</span>
+                            </div>
+                            <button class="btn btn-danger w-100 mt-3 curso-inscribir-btn" onclick="abrirModalInscripcion(this)">
+                                Inscribirse <i class="fas fa-user-plus ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="col-lg-4 col-md-6" data-animate="fade-up">
+                    <div class="curso-card h-100 curso-featured">
+                        <div class="curso-featured-ribbon">⭐ Más Solicitado</div>
+                        <div class="curso-img-wrap">
+                            <img src="assets/Servicios_Assets/Pruebas Hidrostáticas.jpeg" alt="Primeros Auxilios y RCP" loading="lazy">
+                            <div class="curso-level-badge nivel-avanzado">Nivel Avanzado</div>
+                            <div class="curso-img-overlay">
+                                <div class="curso-overlay-content">
+                                    <i class="fas fa-play-circle fa-2x mb-2"></i>
+                                    <span>Ver Detalles</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="curso-body">
+                            <div class="curso-meta mb-2">
+                                <span><i class="fas fa-clock text-danger me-1"></i> 20 Horas</span>
+                                <span><i class="fas fa-map-marker-alt text-danger me-1"></i> Híbrido</span>
+                                <span><i class="fas fa-users text-danger me-1"></i> Máx. 15 personas</span>
+                            </div>
+                            <h3 class="curso-title">Primeros Auxilios Avanzados y RCP</h3>
+                            <p class="curso-desc">Soporte vital básico, uso del DEA y estabilización de pacientes críticos bajo lineamientos del MINSALUD Colombia.</p>
+                            <div class="curso-skills">
+                                <span class="skill-tag">RCP Adultos</span>
+                                <span class="skill-tag">DEA / Desfibrilador</span>
+                                <span class="skill-tag">Trauma</span>
+                            </div>
+                            <button class="btn btn-danger w-100 mt-3 curso-inscribir-btn" onclick="abrirModalInscripcion(this)">
+                                Inscribirse <i class="fas fa-user-plus ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="col-lg-4 col-md-6" data-animate="fade-up">
+                    <div class="curso-card h-100">
+                        <div class="curso-img-wrap">
+                            <img src="assets/Servicios_Assets/Pintura para Extintores.jpeg" alt="Rescate en Espacios Confinados" loading="lazy">
+                            <div class="curso-level-badge nivel-especialidad">Especialidad Táctica</div>
+                            <div class="curso-img-overlay">
+                                <div class="curso-overlay-content">
+                                    <i class="fas fa-play-circle fa-2x mb-2"></i>
+                                    <span>Ver Detalles</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="curso-body">
+                            <div class="curso-meta mb-2">
+                                <span><i class="fas fa-clock text-danger me-1"></i> 60 Horas</span>
+                                <span><i class="fas fa-map-marker-alt text-danger me-1"></i> Presencial/Práctico</span>
+                            </div>
+                            <h3 class="curso-title">Rescate en Espacios Confinados</h3>
+                            <p class="curso-desc">Opera en atmósferas peligrosas y espacios reducidos cumpliendo con la Normativa legal vigente de trabajo de alto riesgo en Colombia.</p>
+                            <div class="curso-skills">
+                                <span class="skill-tag">Monitoreo Atmosférico</span>
+                                <span class="skill-tag">Ventilación</span>
+                                <span class="skill-tag">Extracción segura</span>
+                            </div>
+                            <button class="btn btn-danger w-100 mt-3 curso-inscribir-btn" onclick="abrirModalInscripcion(this)">
+                                Inscribirse <i class="fas fa-user-plus ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO DE INSCRIPCIÓN -->
+    <section class="section-pad section-alt">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">¿Cómo funciona?</span>
+                <h2 class="section-title">Proceso de Inscripción</h2>
+                <div class="accent-line mx-auto"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3 col-6 text-center" data-animate="fade-up">
+                    <div class="inscripcion-step">
+                        <div class="istep-num">01</div>
+                        <div class="istep-icon"><i class="fas fa-phone"></i></div>
+                        <h5>Contáctanos</h5>
+                        <p>Escríbenos por WhatsApp o llena el formulario de contacto.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center" data-animate="fade-up">
+                    <div class="inscripcion-step">
+                        <div class="istep-num">02</div>
+                        <div class="istep-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h5>Diagnóstico</h5>
+                        <p>Evaluamos tu nivel y necesidades para orientarte al curso ideal.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center" data-animate="fade-up">
+                    <div class="inscripcion-step">
+                        <div class="istep-num">03</div>
+                        <div class="istep-icon"><i class="fas fa-calendar-check"></i></div>
+                        <h5>Agenda</h5>
+                        <p>Confirmamos la fecha y el grupo de formación.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center" data-animate="fade-up">
+                    <div class="inscripcion-step">
+                        <div class="istep-num">04</div>
+                        <div class="istep-icon"><i class="fas fa-certificate"></i></div>
+                        <h5>Certifícate</h5>
+                        <p>Completa el programa y recibe tu certificado avalado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CURSOS -->
+    <section class="cursos-cta-band">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-7">
+                    <h2 class="section-title text-white mb-1">¿Tu empresa necesita capacitar a su brigada?</h2>
+                    <p class="mb-0" style="color:rgba(255,255,255,0.75)">Ofrecemos cursos in-company con horarios flexibles y descuentos por grupo.</p>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <a href="https://wa.me/573122427212?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20cursos%20para%20empresa" target="_blank" rel="noopener" class="btn btn-light btn-lg fw-bold btn-ripple" id="cursosCTABtn">
+                        <i class="fab fa-whatsapp text-success me-2"></i> Solicitar cotización grupal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
-                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            <div class="row align-items-center gy-3">
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
+                        <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo" style="height:40px;border-radius:50%;background:#fff;padding:2px;">
+                        <span class="fw-bold">EL BOMBERO LTDA</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="footer-copy mb-0">&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA</p>
+                </div>
             </div>
-            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
         </div>
     </footer>
 
-    <!-- Sidebar Global -->
+    <!-- FLOATING ACTIONS -->
+    <div class="floating-actions">
+        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="float-btn scroll-top" id="scrollTopBtn" aria-label="Ir Arriba">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- GLOBAL SIDEBAR -->
     <div id="globalSidebar" class="sidebar">
         <div class="sidebar-header">
-            <h3>Menú Opciones</h3>
-            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+            <h3>Menú</h3>
+            <button class="btn btn-icon" id="closeSidebarBtn" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <ul class="sidebar-links">
+        <ul class="sidebar-nav">
             <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
-            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
-            <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Catálogo</a></li>
+            <li><a href="cursos.html" class="active"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
             <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+            <li class="sidebar-divider"></li>
+            <li>
+                <a href="mobile-app/index.html" target="_blank" class="sidebar-app-link">
+                    <i class="fas fa-mobile-alt"></i> Previsualización App
+                    <span class="app-badge">NUEVO</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
+    <!-- MODAL INSCRIPCIÓN -->
+    <div id="inscripcionModal" class="custom-modal">
+        <div class="custom-modal-content" style="max-width:480px">
+            <button class="btn-modal-close" id="closeInscripcionBtn" aria-label="Cerrar">&times;</button>
+            <div class="text-center mb-3">
+                <div style="width:56px;height:56px;background:rgba(215,38,56,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.5rem;color:var(--red)"><i class="fas fa-graduation-cap"></i></div>
+                <h2 class="section-title mb-1" id="inscripcionModalTitle">Inscribirse al Curso</h2>
+                <div class="accent-line mx-auto"></div>
+            </div>
+            <form id="inscripcionForm" novalidate>
+                <div class="mb-3">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="inscNombre" required placeholder="Tu nombre completo">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="inscEmail" required placeholder="correo@empresa.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Teléfono / WhatsApp</label>
+                    <input type="tel" class="form-control" id="inscTel" placeholder="+57 300 000 0000">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Empresa u Organización</label>
+                    <input type="text" class="form-control" id="inscEmpresa" placeholder="Opcional">
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg w-100">
+                    Enviar Solicitud de Inscripción <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+                <a id="inscripcionWA" href="#" target="_blank" rel="noopener"
+                   class="btn btn-outline-success w-100 mt-2">
+                    <i class="fab fa-whatsapp me-1"></i> O escríbenos directamente por WhatsApp
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    /* ── FILTRO POR NIVEL ── */
+    const levelItems = document.querySelectorAll('.clevel-item[data-nivel]');
+    const cursoCards = document.querySelectorAll('#cursos-lista .col-lg-4');
+    let activeNivel  = null;
+
+    levelItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const nivel = item.dataset.nivel;
+            if (activeNivel === nivel) {
+                item.classList.remove('active');
+                activeNivel = null;
+                cursoCards.forEach(c => { c.style.display = ''; c.style.opacity = '1'; });
+            } else {
+                levelItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                activeNivel = nivel;
+                cursoCards.forEach(card => {
+                    const badge = card.querySelector('.curso-level-badge');
+                    const match = badge && badge.classList.contains('nivel-' + nivel);
+                    card.style.display = match ? '' : 'none';
+                    card.style.opacity = match ? '1' : '0';
+                });
+            }
+        });
+        item.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') item.click(); });
+    });
+
+    /* ── RIPPLE BOTÓN CTA ── */
+    document.querySelectorAll('.btn-ripple').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const r = document.createElement('span');
+            r.className = 'btn-ripple-circle';
+            const rect = this.getBoundingClientRect();
+            r.style.left = (e.clientX - rect.left) + 'px';
+            r.style.top  = (e.clientY - rect.top)  + 'px';
+            this.appendChild(r);
+            setTimeout(() => r.remove(), 700);
+        });
+    });
+
+    /* ── MODAL INSCRIPCIÓN ── */
+    const inscModal = document.getElementById('inscripcionModal');
+    window.abrirModalInscripcion = function(btn) {
+        const card  = btn.closest('.curso-card');
+        const title = card?.querySelector('.curso-title')?.textContent || 'Curso';
+        document.getElementById('inscripcionModalTitle').textContent = 'Inscribirse: ' + title;
+        const waMsg = encodeURIComponent('Hola, me gustaría inscribirme al curso: ' + title);
+        document.getElementById('inscripcionWA').href = 'https://wa.me/573122427212?text=' + waMsg;
+        inscModal.style.display = 'flex';
+        requestAnimationFrame(() => inscModal.classList.add('show'));
+    };
+    document.getElementById('closeInscripcionBtn')?.addEventListener('click', () => {
+        inscModal.classList.remove('show');
+        setTimeout(() => { inscModal.style.display='none'; }, 300);
+    });
+    inscModal?.addEventListener('click', e => {
+        if(e.target === inscModal) { inscModal.classList.remove('show'); setTimeout(()=>{ inscModal.style.display='none';},300); }
+    });
+    document.getElementById('inscripcionForm')?.addEventListener('submit', e => {
+        e.preventDefault();
+        const nombre = document.getElementById('inscNombre').value;
+        const email  = document.getElementById('inscEmail').value;
+        const titulo = document.getElementById('inscripcionModalTitle').textContent;
+        if(!nombre||!email){ alert('Por favor completa los campos requeridos.'); return; }
+        const waMsg  = encodeURIComponent(`Hola! Me llamo ${nombre} (${email}) y quiero inscribirme en: ${titulo}`);
+        window.open('https://wa.me/573122427212?text='+waMsg,'_blank');
+        inscModal.classList.remove('show');
+        setTimeout(()=>{ inscModal.style.display='none'; e.target.reset(); },300);
+    });
+    </script>
 </body>
 </html>

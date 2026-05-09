@@ -4,90 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Clientes | LA PLANTA DE EXTINTORES EL BOMBERO LTDA</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <meta name="description" content="Más de 500 empresas del sector público y privado de Colombia confían en El Bombero Ltda para proteger sus instalaciones.">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header Pegajoso -->
-    <header id="header" class="scrolled">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
-                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
-            </div>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
-                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
-                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
-                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
-                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="section bg-alt" style="padding-top: 150px; min-height: 80vh;">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <div class="section-header">
-                <h2>Todos Nuestros Clientes y Casos de Éxito</h2>
-                <div class="accent-line"></div>
-                <p>El sector público y privado de Colombia confía en nosotros para proteger sus organizaciones.</p>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo El Bombero" class="logo-img">
+                <span class="brand-name d-none d-md-inline">EL BOMBERO LTDA</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <button id="themeToggleBtn" class="btn btn-icon" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cotizacion.html" class="btn btn-danger btn-sm">
+                    Cotización <i class="fas fa-shopping-cart ms-1"></i>
+                </a>
+                <button class="btn btn-icon ms-1" id="sidebar-toggle" aria-label="Menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
-            <!-- Contenedor de Todos los Clientes (Llenado por JS) -->
-            <div class="clients-grid" id="all-clients-container">
-                <!-- Se llenará dinámicamente -->
+        </div>
+    </nav>
+
+    <!-- HERO CLIENTES — Mapa / confianza -->
+    <section class="clients-hero">
+        <div class="clients-hero-bg">
+            <div class="clients-hero-grid"></div>
+            <div class="clients-hero-glow"></div>
+        </div>
+        <div class="container clients-hero-content">
+            <span class="badge-tag"><i class="fas fa-shield-alt me-1"></i> Confianza Empresarial</span>
+            <h1 class="hero-title mt-3">
+                Más de <span class="text-accent">500 empresas</span><br>nos respaldan
+            </h1>
+            <p class="hero-desc">
+                Sector público y privado de Colombia ha puesto su seguridad en nuestras manos. Conoce sus historias de éxito.
+            </p>
+            <!-- Métricas de confianza -->
+            <div class="clients-trust-bar">
+                <div class="ctb-item">
+                    <i class="fas fa-building text-danger"></i>
+                    <strong>+500</strong>
+                    <span>Empresas Activas</span>
+                </div>
+                <div class="ctb-sep"></div>
+                <div class="ctb-item">
+                    <i class="fas fa-map-marker-alt text-danger"></i>
+                    <strong>32</strong>
+                    <span>Departamentos</span>
+                </div>
+                <div class="ctb-sep"></div>
+                <div class="ctb-item">
+                    <i class="fas fa-star text-danger"></i>
+                    <strong>98%</strong>
+                    <span>Satisfacción</span>
+                </div>
+                <div class="ctb-sep"></div>
+                <div class="ctb-item">
+                    <i class="fas fa-redo text-danger"></i>
+                    <strong>+20</strong>
+                    <span>Años de fidelidad</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- SECCIÓN FILTRO RÁPIDO -->
+    <div class="clients-filter-bar">
+        <div class="container">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <span class="text-muted small fw-semibold text-uppercase" style="letter-spacing:.08em">Buscar:</span>
+                <div class="clients-search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="clientsSearchInput" placeholder="Empresa, sector, ciudad...">
+                </div>
+                <span id="clientsCountLabel" class="clients-count ms-auto"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRID DE CLIENTES -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Nuestros Aliados</span>
+                <h2 class="section-title">Casos de Éxito</h2>
+                <div class="accent-line mx-auto"></div>
+                <p class="section-desc mx-auto" style="max-width:560px">
+                    Cada cliente es una historia de protección y confianza. Aquí presentamos a quienes han elegido El Bombero Ltda.
+                </p>
+            </div>
+
+            <div id="all-clients-container" class="clients-premium-grid"></div>
+
+            <div id="clients-no-results" class="catalog-empty" style="display:none">
+                <i class="fas fa-building fa-3x text-danger opacity-50 mb-3"></i>
+                <h4>Sin resultados</h4>
+                <p class="text-muted">Intenta con otro término de búsqueda.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- CTA CLIENTES -->
+    <section class="clients-cta-band">
+        <div class="container text-center">
+            <i class="fas fa-handshake clients-cta-icon"></i>
+            <h2 class="section-title text-white mt-3">¿Tu empresa aún no es parte de nuestra familia?</h2>
+            <p class="clients-cta-desc">Únete a más de 500 organizaciones que ya protegen su patrimonio con nosotros.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+                <a href="https://wa.me/573122427212?text=Hola,%20quiero%20que%20mi%20empresa%20sea%20parte%20de%20El%20Bombero%20LTDA" target="_blank" rel="noopener" class="btn btn-light btn-lg fw-bold clients-cta-wa">
+                    <i class="fab fa-whatsapp text-success me-2"></i>Contactar por WhatsApp
+                </a>
+                <a href="catalogo.html" class="btn btn-outline-light btn-lg clients-cta-catalog">
+                    <i class="fas fa-fire-extinguisher me-2"></i>Ver Equipos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
-                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            <div class="row align-items-center gy-3">
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
+                        <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo" style="height:40px;border-radius:50%;background:#fff;padding:2px;">
+                        <span class="fw-bold">EL BOMBERO LTDA</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="footer-copy mb-0">&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA</p>
+                </div>
             </div>
-            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
         </div>
     </footer>
 
-    <!-- Elementos flotantes -->
+    <!-- FLOATING ACTIONS -->
     <div class="floating-actions">
-        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+        <button class="float-btn scroll-top" id="scrollTopBtn" aria-label="Ir Arriba">
             <i class="fas fa-chevron-up"></i>
-        </a>
+        </button>
     </div>
 
-    <!-- Sidebar Global -->
+    <!-- GLOBAL SIDEBAR -->
     <div id="globalSidebar" class="sidebar">
         <div class="sidebar-header">
-            <h3>Menú Opciones</h3>
-            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+            <h3>Menú</h3>
+            <button class="btn btn-icon" id="closeSidebarBtn" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <ul class="sidebar-links">
+        <ul class="sidebar-nav">
             <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
-            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
+            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Catálogo</a></li>
             <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
-            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+            <li><a href="clientes.html" class="active"><i class="fas fa-users"></i> Clientes</a></li>
+            <li class="sidebar-divider"></li>
+            <li>
+                <a href="mobile-app/index.html" target="_blank" class="sidebar-app-link">
+                    <i class="fas fa-mobile-alt"></i> Previsualización App
+                    <span class="app-badge">NUEVO</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-    <!-- Scripts -->
+    <!-- MODAL GLOBAL -->
+    <div id="globalModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <button class="btn-modal-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Búsqueda en tiempo real en clientes
+        document.getElementById('clientsSearchInput')?.addEventListener('input', function(){
+            const q = this.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.client-premium-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const show = !q || text.includes(q);
+                card.parentElement.style.display = show ? '' : 'none';
+                if(show) visible++;
+            });
+            const lbl = document.getElementById('clientsCountLabel');
+            if(lbl) lbl.textContent = visible + ' cliente' + (visible !== 1 ? 's' : '');
+            const noR = document.getElementById('clients-no-results');
+            if(noR) noR.style.display = visible === 0 ? 'flex' : 'none';
+        });
+    </script>
 </body>
 </html>

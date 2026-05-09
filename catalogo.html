@@ -4,117 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos | LA PLANTA DE EXTINTORES EL BOMBERO LTDA</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <meta name="description" content="Explora nuestro catálogo completo de equipos contra incendio, extintores y sistemas de protección certificados.">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header Pegajoso -->
-    <header id="header" class="scrolled"> <!-- Siempre Scrolled en subpáginas para evitar transparencia sobre el contenido -->
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
-                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
-            </div>
-            <nav style="display: flex; align-items: center; gap: 20px;">
-                <button id="themeToggleBtn" style="background:none; border:none; color:var(--text-main); font-size:1.5rem; cursor:pointer;" onclick="document.body.classList.toggle('light-mode');"><i class="fas fa-moon"></i></button>
-                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
-                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
-                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
-                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Encabezado de la página -->
-    <section class="section" style="padding-top: 150px; background: radial-gradient(circle at top, rgba(225,29,72,0.1), transparent 50%);">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
-            <div class="section-header">
-                <h2>Catálogo Completo de Equipamiento</h2>
-                <div class="accent-line"></div>
-                <p>Navega a través de nuestras categorías de productos contra incendio y herramientas de rescate.</p>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo El Bombero" class="logo-img">
+                <span class="brand-name d-none d-md-inline">EL BOMBERO LTDA</span>
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto">
+                <button id="themeToggleBtn" class="btn btn-icon" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="cotizacion.html" class="btn btn-danger btn-sm">
+                    Cotización <i class="fas fa-shopping-cart ms-1"></i>
+                </a>
+                <button class="btn btn-icon ms-1" id="sidebar-toggle" aria-label="Menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
-            <!-- Barra de Búsqueda Mejorada -->
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="catalogSearchInput" placeholder="Busca por nombre, categoría o especificación técnica...">
+        </div>
+    </nav>
+
+    <!-- HERO CATÁLOGO — Llamas y fuego -->
+    <section class="catalog-hero">
+        <div class="catalog-hero-bg">
+            <div class="catalog-flame-overlay"></div>
+            <div class="catalog-particles" id="catalogParticles"></div>
+        </div>
+        <div class="container catalog-hero-content">
+            <span class="badge-tag"><i class="fas fa-fire me-1"></i> +80 Productos Certificados</span>
+            <h1 class="hero-title mt-3">
+                Equipamiento de <span class="text-accent">Clase Mundial</span>
+            </h1>
+            <p class="hero-desc">
+                Extintores, sistemas de rociadores, trajes de protección y más. Todo bajo normas NFPA e ICONTEC.
+            </p>
+            <!-- Barra de búsqueda integrada en el hero -->
+            <div class="catalog-search-wrap">
+                <i class="fas fa-search catalog-search-icon"></i>
+                <input type="text" id="catalogSearchInput" class="catalog-search-input"
+                       placeholder="Busca extintor, manguera, EPI...">
+                <button id="openFilterBtn" class="catalog-filter-btn">
+                    <i class="fas fa-sliders-h me-1"></i> Filtrar
+                </button>
+            </div>
+            <!-- Stats rápidas -->
+            <div class="catalog-hero-stats">
+                <div class="chstat"><span>+80</span><small>Productos</small></div>
+                <div class="chstat-sep"></div>
+                <div class="chstat"><span>12</span><small>Categorías</small></div>
+                <div class="chstat-sep"></div>
+                <div class="chstat"><span>NFPA</span><small>Certificados</small></div>
+            </div>
+        </div>
+        <!-- Scroll down -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- PANEL DE FILTROS (off-canvas lateral) -->
+    <div id="filterSidebar" class="filter-panel">
+        <div class="filter-panel-header">
+            <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-filter text-danger"></i>
+                <span class="fw-bold">Filtrar por Categoría</span>
+            </div>
+            <button class="btn btn-icon" id="closeFilterBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="filter-panel-body">
+            <div id="categoryFiltersContainer" class="filter-cats">
+                <button class="cat-chip active" data-category="Todos">
+                    <i class="fas fa-th-large me-1"></i> Todos
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="filterOverlay" class="filter-overlay"></div>
+
+    <!-- SECCIÓN PRINCIPAL DEL CATÁLOGO -->
+    <section class="section-pad catalog-section">
+        <div class="container">
+            <!-- Toolbar activo: categoría + total -->
+            <div class="catalog-toolbar mb-4">
+                <div class="d-flex align-items-center gap-2">
+                    <span id="activeCatLabel" class="catalog-active-cat">
+                        <i class="fas fa-th-large me-1"></i> Todas las Categorías
+                    </span>
+                    <span id="productCountBadge" class="catalog-count-badge">0 productos</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <button id="viewGrid" class="btn btn-icon active-view" aria-label="Vista cuadrícula">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button id="viewList" class="btn btn-icon" aria-label="Vista lista">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Filtros por Categoría Mejorados -->
-            <button id="openFilterBtn" class="btn btn-secondary" style="margin-bottom: 25px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fas fa-filter"></i> Filtros de Modelos y Categorías</button>
-            <div id="filterSidebar" class="filter-sidebar">
-                <div class="filter-header">
-                    <h3><i class="fas fa-filter"></i> Filtros Disponibles</h3>
-                    <i class="fas fa-times close-filter" id="closeFilterBtn"></i>
-                </div>
-                <div class="filter-section">
-                    <h4>Categorías</h4>
-                    <div class="category-filters" id="categoryFiltersContainer" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex-wrap: nowrap; overflow-x: hidden;">
-                        <button class="cat-btn active" data-category="Todos" style="width: 100%; text-align: left;">Todas las Categorías</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Grid de productos -->
+            <div class="row g-4" id="catalog-products-container"></div>
 
-            <!-- Contenedor Principal del Catálogo -->
-            <div class="products-grid" id="catalog-products-container">
-                <!-- Se llenará vía JS -->
-            </div>
-            
-            <div id="catalog-no-products" style="display:none; text-align:center; padding: 40px; color: var(--text-light); background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
-                <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
-                <h3>No se encontraron productos</h3>
-                <p>Intenta cambiar los términos de búsqueda o selecciona otra categoría.</p>
+            <!-- Sin resultados -->
+            <div id="catalog-no-products" class="catalog-empty" style="display:none">
+                <i class="fas fa-box-open fa-3x text-danger opacity-50 mb-3"></i>
+                <h4>Sin resultados</h4>
+                <p class="text-muted">Prueba con otro término o cambia la categoría.</p>
+                <button class="btn btn-outline-danger mt-2" onclick="document.getElementById('catalogSearchInput').value=''; document.querySelector('.cat-chip').click();">
+                    Limpiar filtros
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- CTA BANNER -->
+    <section class="catalog-cta-band">
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-lg-7">
+                    <span class="section-eyebrow">¿Necesitas algo específico?</span>
+                    <h2 class="section-title mb-0">Solicita una cotización personalizada</h2>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <a href="cotizacion.html" class="btn btn-danger btn-lg me-2">
+                        Cotizar Ahora <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="https://wa.me/573122427212" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">
+                        <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
-                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            <div class="row align-items-center gy-3">
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
+                        <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo" style="height:40px;border-radius:50%;background:#fff;padding:2px;">
+                        <span class="fw-bold">EL BOMBERO LTDA</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="footer-copy mb-0">&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA</p>
+                </div>
             </div>
-            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp & Volver al tope -->
+    <!-- FLOATING ACTIONS -->
     <div class="floating-actions">
-        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+        <button class="float-btn scroll-top" id="scrollTopBtn" aria-label="Ir Arriba">
             <i class="fas fa-chevron-up"></i>
-        </a>
+        </button>
     </div>
 
-    <!-- Sidebar Global -->
+    <!-- GLOBAL SIDEBAR -->
     <div id="globalSidebar" class="sidebar">
         <div class="sidebar-header">
-            <h3>Menú Opciones</h3>
-            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+            <h3>Menú</h3>
+            <button class="btn btn-icon" id="closeSidebarBtn" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <ul class="sidebar-links">
+        <ul class="sidebar-nav">
             <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
-            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
+            <li><a href="catalogo.html" class="active"><i class="fas fa-box-open"></i> Catálogo</a></li>
             <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
             <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+            <li class="sidebar-divider"></li>
+            <li>
+                <a href="mobile-app/index.html" target="_blank" class="sidebar-app-link">
+                    <i class="fas fa-mobile-alt"></i> Previsualización App
+                    <span class="app-badge">NUEVO</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
+    <!-- MODAL GLOBAL -->
+    <div id="globalModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <button class="btn-modal-close" id="closeModalBtn" aria-label="Cerrar">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Partículas flotantes tipo brasas
+        (function(){
+            const c = document.getElementById('catalogParticles');
+            if (!c) return;
+            for(let i=0; i<25; i++){
+                const p = document.createElement('span');
+                p.className = 'particle';
+                p.style.cssText = `left:${Math.random()*100}%;animation-delay:${Math.random()*6}s;animation-duration:${4+Math.random()*6}s;width:${2+Math.random()*4}px;height:${2+Math.random()*4}px;`;
+                c.appendChild(p);
+            }
+        })();
+
+        // Toggle vista lista/grid
+        document.getElementById('viewGrid')?.addEventListener('click', function(){
+            const c = document.getElementById('catalog-products-container');
+            c.classList.remove('catalog-list-view');
+            this.classList.add('active-view');
+            document.getElementById('viewList').classList.remove('active-view');
+        });
+        document.getElementById('viewList')?.addEventListener('click', function(){
+            const c = document.getElementById('catalog-products-container');
+            c.classList.add('catalog-list-view');
+            this.classList.add('active-view');
+            document.getElementById('viewGrid').classList.remove('active-view');
+        });
+
+        // Filter overlay
+        document.getElementById('filterOverlay')?.addEventListener('click', ()=>{
+            document.getElementById('filterSidebar').classList.remove('open');
+            document.getElementById('filterOverlay').classList.remove('open');
+        });
+    </script>
 </body>
 </html>

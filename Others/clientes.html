@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Clientes | LA PLANTA DE EXTINTORES EL BOMBERO LTDA</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Pegajoso -->
+    <header id="header" class="scrolled">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/Extintores_Assets/Extintores2.png" alt="Logo LA PLANTA DE EXTINTORES EL BOMBERO LTDA">
+                <span class="company-brand">LA PLANTA DE EXTINTORES EL BOMBERO LTDA</span>
+            </div>
+            <nav style="display: flex; align-items: center; gap: 20px;">
+                <button id="themeToggleBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; outline:none;"><i class="fas fa-moon"></i></button>
+                <a href="mobile-app/index.html" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.95rem; border-color: var(--primary-red); color: var(--primary-red); display: flex; align-items: center; gap: 8px;"><i class="fas fa-mobile-alt"></i> Probar App</a>
+                <a href="cotizacion.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Cotización <i class="fas fa-shopping-cart"></i></a>
+                <div class="sidebar-toggle" id="sidebar-toggle" style="font-size: 1.8rem; cursor: pointer; color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-main)'">
+                    <i class="fas fa-ellipsis-v"></i> <span style="font-size: 1rem; font-weight: 600; vertical-align: middle; margin-left: 5px;">Menú</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section bg-alt" style="padding-top: 150px; min-height: 80vh;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Todos Nuestros Clientes y Casos de Éxito</h2>
+                <div class="accent-line"></div>
+                <p>El sector público y privado de Colombia confía en nosotros para proteger sus organizaciones.</p>
+            </div>
+            
+            <!-- Contenedor de Todos los Clientes (Llenado por JS) -->
+            <div class="clients-grid" id="all-clients-container">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 20px;">
+                <a href="#" aria-label="LinkedIn" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="TikTok" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FFF'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="YouTube" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook (X)" style="color: var(--text-light); font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='#1DA1F2'" onmouseout="this.style.color='var(--text-light)'"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2026 LA PLANTA DE EXTINTORES EL BOMBERO LTDA. Modernización y Eficiencia Operativa.</p>
+        </div>
+    </footer>
+
+    <!-- Elementos flotantes -->
+    <div class="floating-actions">
+        <a href="https://wa.me/573122427212" class="float-btn whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="float-btn scroll-top" id="scrollTopBtn">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Sidebar Global -->
+    <div id="globalSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Menú Opciones</h3>
+            <span class="close-sidebar" id="closeSidebarBtn">&times;</span>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="index.html#servicios"><i class="fas fa-tools"></i> Servicios</a></li>
+            <li><a href="catalogo.html"><i class="fas fa-box-open"></i> Productos/Inventario</a></li>
+            <li><a href="cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a></li>
+            <li><a href="clientes.html"><i class="fas fa-users"></i> Clientes</a></li>
+        </ul>
+    </div>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

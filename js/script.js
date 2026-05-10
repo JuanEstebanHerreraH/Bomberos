@@ -122,10 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2 style="margin-bottom:10px">${cli.nombre}</h2>
                 <p style="margin-bottom:20px">${cli.descripcion}</p>
                 <div class="modal-grid-info" style="grid-template-columns:1fr">
-                    <div>
-                        <strong>Ubicación</strong>
-                        <span><i class="fas fa-map-marker-alt me-2" style="color:var(--muted)"></i>${cli.ubicacion || 'N/A'}</span>
-                    </div>
+
                     <div>
                         <strong>Trabajo Realizado</strong>
                         <span><i class="fas fa-check-circle me-2" style="color:#4ade80"></i>${cli.trabajo_realizado}</span>
@@ -327,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${cli.logo_url}" alt="${cli.nombre}" class="cpc-logo" loading="lazy">
                         <div>
                             <p class="cpc-name">${cli.nombre}</p>
-                            <p class="cpc-loc"><i class="fas fa-map-marker-alt me-1"></i>${cli.ubicacion || 'Colombia'}</p>
                         </div>
                     </div>
                     <p class="cpc-desc">${cli.descripcion}</p>

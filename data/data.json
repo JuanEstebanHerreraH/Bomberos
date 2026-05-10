@@ -87,48 +87,35 @@
       "nombre": "KUEHNE+NAGEL",
       "descripcion": "Texto de ejemplo",
       "logo_url": "assets/Empresas_Assets/Empresa1.png",
-      "trabajo_realizado": "Instalación de gabinetes y capacitación a brigadistas.",
-      "ubicacion": "Localidad de Suba, Av. Boyacá #170"
+      "trabajo_realizado": "Instalación de gabinetes y capacitación a brigadistas."
     },
     {
       "id": 2,
       "nombre": "ALBATEQ S.A.",
       "descripcion": "Texto de ejemplo",
       "logo_url": "assets/Empresas_Assets/Empresa2.png",
-      "trabajo_realizado": "Renovación total del sistema de rociadores y extintores.",
-      "ubicacion": "Av. Calle 26 #62-47, Bogotá"
+      "trabajo_realizado": "Renovación total del sistema de rociadores y extintores."
     },
     {
       "id": 3,
       "nombre": "Polylon",
       "descripcion": "Texto de ejemplo",
       "logo_url": "assets/Empresas_Assets/Empresa3.png",
-      "trabajo_realizado": "Planes de emergencia de laboratorios de química y simulacros.",
-      "ubicacion": "Cra 45 #26-85, Ciudad Universitaria"
+      "trabajo_realizado": "Planes de emergencia de laboratorios de química y simulacros."
     },
     {
       "id": 4,
       "nombre": "Vigía Plus Logistics",
       "descripcion": "Texto de ejemplo",
       "logo_url": "assets/Empresas_Assets/Empresa4.png",
-      "trabajo_realizado": "Dotación de equipos extintores CO2 y señalización fotoluminiscente.",
-      "ubicacion": "Calle 23 #66-46, Bogotá"
-    },
-    {
-      "id": 5,
-      "nombre": "Cuerpo de bomberos voluntarios de funza",
-      "descripcion": "Texto de ejemplo",
-      "logo_url": "assets/Empresas_Assets/Empresa5.png",
-      "trabajo_realizado": "Auditoría de rutas de evacuación y sistema de bombas contraincendios.",
-      "ubicacion": "Cra. 7 #24-89, Centro Internacional"
+      "trabajo_realizado": "Dotación de equipos extintores CO2 y señalización fotoluminiscente."
     },
     {
       "id": 6,
       "nombre": "Concesíon DEVISAB",
       "descripcion": "Texto de ejemplo",
       "logo_url": "assets/Empresas_Assets/Empresa6.png",
-      "trabajo_realizado": "Suministro de trajes de aproximación al fuego nivel 3.",
-      "ubicacion": "Av. El Dorado #103-9, Fontibón"
+      "trabajo_realizado": "Suministro de trajes de aproximación al fuego nivel 3."
     }
   ]
 }
